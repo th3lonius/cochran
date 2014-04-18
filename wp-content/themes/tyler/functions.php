@@ -20,6 +20,23 @@ if ( ! function_exists( 'tyler_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
+function theme_css() {
+    wp_register_style( 'bxslider', get_template_directory_uri() . '/css/bxslider.css', array(), '20120208', 'all' );
+    wp_enqueue_style( 'bxslider' );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_css' );
+
+function theme_js() {
+    wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '', true );
+    wp_register_script( 'bxslider', get_template_directory_uri() . '/js/bxslider.js', array('jquery'), '', true );
+    wp_enqueue_script( 'main' );
+    wp_enqueue_script( 'bxslider' );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_js');
+
 function tyler_setup() {
 
 	/*
@@ -44,6 +61,9 @@ function tyler_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'tyler' ),
 	) );
+    
+    // Enable custom menus
+    add_theme_support( 'menus' );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
@@ -68,33 +88,23 @@ add_action( 'after_setup_theme', 'tyler_setup' );
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function tyler_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'tyler' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+function tyler_widgets( $name, $id, $description ) {
+	$args = array(
+		'name'          => __( $name ),
+		'id'            => $id,
+        'description'   => $description,
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+	);
+    
+    register_sidebar( $args );
+    
 }
-add_action( 'widgets_init', 'tyler_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function tyler_scripts() {
-	wp_enqueue_style( 'tyler-style', get_stylesheet_uri() );
+tyler_widgets( 'Home Slider', 'home_slider', "Home page fullscreen slider of random work" );
 
-	wp_enqueue_script( 'tyler-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'tyler-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'tyler_scripts' );
 
 /**
  * Implement the Custom Header feature.

@@ -1,0 +1,736 @@
+/* 
+Theme Name: Tyler
+Theme URI: http://tylercochran.com
+Description: A custom Wordpress portfolio site for Tyler Cochran
+Author: Matthew Mesaros
+Version: 1.0
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+body, html {
+    height: 100%;
+}
+body {
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    -mox-box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/*GLOBAL*/
+
+$green: #92B540;
+$blue: #009BA6;
+$red: #CD4D58;
+$yellow: #CDC638;
+$black: #333332;
+$title-font: "brandon-grotesque", sans-serif;
+
+@mixin block-rel {
+    display: block;
+    position: relative;
+}
+@mixin block-ab {
+    display: block;
+    position: absolute;
+}
+@mixin inline-rel {
+    display: inline-block;
+    position: relative;
+}
+@mixin trans-one {
+    transition: .1s all;
+    -moz-transition: .1s all;
+    -webkit-transition: .1s all;
+    transition-delay: .1s;
+    -moz-transition-delay: .1s;
+    -webkit-transition-delay: .1s;
+}
+@mixin trans-two {
+    transition: .3s all;
+    -moz-transition: .3s all;
+    -webkit-transition: .3s all;
+    transition-delay: .1s;
+    -moz-transition-delay: .1s;
+    -webkit-transition-delay: .1s;
+}
+@mixin trans-three {
+    transition: .3s all;
+    -moz-transition: .3s all;
+    -webkit-transition: .3s all;
+    transition-delay: 1s;
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+}
+@mixin h1 {
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    color: $black;
+}
+@mixin h2 {
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+    color: $black;
+}
+@mixin h2-alt {
+    font-family: "abril-display", sans-serif;
+    font-size: 26px;
+    font-weight: 100;
+    line-height: 26px;
+    color: $black;
+}
+@mixin h3 {
+    font-family: $title-font;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $black;
+}
+@mixin h3-alt {
+    font-family: "abril-display", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 26px;
+    color: $black;
+}
+@mixin h4 {
+    font-family: $title-font;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $black;
+}
+@mixin p {
+    font-family: "abril-display", sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 16px;
+    color: $black;
+}
+@mixin p-alt {
+    font-family: $title-font;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 16px;
+    color: $black;
+}
+
+h1 {
+    @include h1;
+}
+h2 {
+    @include h2;
+}
+.h2-alt {
+    @include h2-alt;
+}
+h3 {
+    @include h3;
+}
+.h3-alt {
+    @include h3-alt;
+}
+p {
+    @include p;
+}
+.p-alt {
+    @include p-alt;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+section {
+    @include block-rel;
+    width: 100%;
+    height: 100%;
+}
+figure {
+    @include block-rel;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+figcaption {
+    @include block-rel;
+}
+main {
+    @include block-rel;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/*MENU*/
+#main-menu {
+    @include block-ab;
+    top: 0; left: 0;
+    width: 60px; height: 60px;
+    z-index: 100;
+    &:hover #menu {
+        @include trans-one;
+        left: 0px;
+    }
+    &:hover span {
+        @include trans-one;
+        width: 300px;
+    }
+    
+    span {
+        @include block-ab;
+        @include trans-three;
+        top: 0; left: 60px;
+        height: 60px; width: 0;
+        overflow: hidden;
+        padding-top: 10px;
+        background: $black;
+    }
+    
+    h1 {
+        @include block-ab;
+        height: 40px; width: 400px;
+        color: white;
+        margin-left: 10px;
+    }
+}
+#main-logo {
+    @include block-rel;
+    @include trans-three;
+    width: 60px; height: 60px;
+    background-image: url('images/icons/logo.svg');
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: none;
+    float: left;
+}
+#main-logo:hover {
+    @include trans-one;
+    background-color: white;
+}
+#menu {
+    @include block-ab;
+    @include trans-three;
+    top: 60px; left: -60px;
+    width: 60; height: 240px;
+    overflow: hidden;
+    background: #333332;
+    float: left;
+    z-index: 1;
+    
+    li {
+        @include block-rel;
+        width: 60px; height: 60px;
+        background: none;
+        &:hover {
+
+        }
+    }
+    #home {
+        background-image: url('images/icons/home.svg');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        &:hover {
+            background-color: #92B540;
+        }
+    }
+    #about {
+        background-image: url('images/icons/about.svg');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        &:hover {
+            background-color: #009BA6;
+        }
+    }
+    #work {
+        background-image: url('images/icons/work.svg');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        &:hover {
+            background-color: #CD4D58;
+        }
+    }
+    #links {
+        background-image: url('images/icons/links.svg');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        &:hover {
+            background-color: #CDC638;
+        }
+    }
+}
+
+/*MAIN PAGE*/
+#main {
+    /*@include trans-two;*/
+}
+.img-bkgd {
+    @include block-rel;
+    width: 100%;
+    min-width: 1440px;
+    height: auto;
+    min-height: 100%;
+}
+.bkgd-desc {
+    @include block-ab;
+    @include trans-two;
+    top: 60px; right: 0;
+    width: 300px; height: 70px;
+    background: white;
+    padding: 10px 0 0 10px;
+    z-index: 100;
+    
+    p {
+        color: #646464;
+    }
+    #right-tog {
+        @include block-ab;
+        @include trans-one;
+        top: 90px; right: 0;
+        width: 40px; height: 40px;
+        cursor: pointer;
+        &:hover #right-tog-plus {
+            right: 60px;
+        }
+        &:hover p {
+            right: 0px;
+        } 
+        
+        #right-tog-plus {
+            @include block-ab;
+            @include trans-one;
+            top: 0px; right: 0;
+            width: 40px; height: 40px;
+            background: white;
+            &:hover {
+                right: 60px;
+            }
+            &::before {
+                content:'';
+                @include block-ab;
+                top: 7px; right: 18px;
+                width: 4px; height: 26px;
+                background: #CD4D58;
+            }
+            &::after {
+                content:'';
+                @include block-ab;
+                top: 18px; right: 7px;
+                width: 26px; height: 4px;
+                background: #CD4D58;
+            }   
+        }
+        p {
+            @include block-ab;
+            @include trans-one;
+            top: 0px; right: -100px;
+            width: 100px; height: 40px;
+            padding: 12px 0 0 12px;
+            background: #CD4D58;
+            color: white;
+        }
+    }
+}
+/*END MAIN PAGE*/
+    
+/*RIGHT*/
+#right {
+    @include block-ab;
+    /*@include trans-two;*/
+    top: 0; bottom: 0; right: -600px;
+    width: 600px;
+    background: white;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    #content-cont {
+        @include block-rel;
+        width: 90%;
+        margin: 80px auto auto;
+        
+        h2 {
+            color: #CD4D58;
+        }
+        p {
+            line-height: 1.7;
+        }
+        .foot {
+            @include block-rel;
+            height: 160px;
+            
+            .click-thru {
+                @include inline-rel;
+                @incldue trans-one;
+                @include h3;
+                font-size: 16px;
+                padding: 10px;
+                vertical-align: bottom;
+                margin: 100px 0 0 0;
+            }
+            #work-thru {
+                @incldue trans-one;
+                float: left;
+                color: #CD4D58;
+                &:hover {
+                    background: #CD4D58;
+                    color: white;
+                }
+            }
+            #about-thru {
+                @incldue trans-one;
+                float: right;
+                color: #009BA6;
+                &:hover {
+                    background: #009BA6;
+                    color: white;
+                }
+            }
+            #links-thru {
+                @incldue trans-one;
+                float: right;
+                color: #009BA6;
+                &:hover {
+                    background: #009BA6;
+                    color: white;
+                }
+            }
+            #prev-thru {
+                @incldue trans-one;
+                float: left;
+                color: #CD4D58;
+                &:hover {
+                    background: #CD4D58;
+                    color: white;
+                }
+            }
+            #next-thru {
+                @incldue trans-one;
+                float: right;
+                color: #009BA6;
+                &:hover {
+                    background: #009BA6;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+/*END RIGHT*/
+
+/*LEFT SECTION*/
+#left {
+    @include block-ab;
+    /*@include trans-two;*/
+    top: 0; bottom: 0; left: -600px;
+    width: 600px;
+    overflow-y: auto;
+    background: white;
+    z-index: 100;
+
+    #work-grid {
+        @include block-rel;
+        width: 100%;
+        padding: 3%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align: justify;
+        &::after {
+            content:'';
+            @include inline-rel;
+            width: 100%;
+        }
+        
+        li {
+            @include inline-rel;
+            @include trans-one;
+            width: 46%; height: 200px;
+            margin: 1%;
+            background-image: url('images/images/gug3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            &:hover div {
+                top: 102px;
+            }
+            &:hover a {
+                @include trans-one;
+                top: 0;
+            }
+            
+            a {
+                content:'';
+                @include block-ab;
+                width: 100%; height: 110px;
+                top: -110px;
+                background-image: url('images/icons/magglass.svg');
+                background-size: 25px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            
+            div {
+                @include block-ab;
+                @include trans-one;
+                top: 200px;
+                background: white;
+                width: 260px;
+                
+                h3 {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    padding: 10px 10px 5px;
+                    background: #CD4D58;
+                    color: white;
+                }
+                p {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    font-size: 16px;
+                    padding: 24px 10px;
+                }
+            }
+        }
+        #work-one {
+            background-image: url('images/images/thumbs/gug1.jpg');
+        }
+        #work-two {
+            background-image: url('images/images/thumbs/walt1.jpg');
+        }
+        #work-three {
+            background-image: url('images/images/thumbs/brain.jpg');
+        }
+        #work-four {
+            background-image: url('images/images/thumbs/weisman.jpg');
+        }
+        #work-five {
+            background-image: url('images/images/thumbs/dancing.jpg');
+        }
+        #work-six {
+            background-image: url('images/images/thumbs/dus.jpg');
+        }
+        #work-seven {
+            background-image: url('images/images/thumbs/music.jpg');
+        }
+        #work-eight {
+            background-image: url('images/images/thumbs/stata.jpg');
+        }
+        #work-nine {
+            background-image: url('images/images/thumbs/spruce.jpg');
+        }
+        #work-ten {
+            background-image: url('images/images/thumbs/jay.jpg');
+        }
+        
+    }
+}
+        
+    
+/*FOOTER*/
+#footer {
+    @include block-ab;
+    /*@include trans-two;*/
+    left: 0; right: 0; bottom: -200px;
+    height: 200px;
+    background: white;
+}
+
+#exlinks-title {
+    @include block-rel;
+    width: 100%;
+    margin: 30px auto 20px;
+    padding-left: 100px;
+}
+
+#exlinks-cont {
+    @include block-rel;
+    width: 100%;
+    text-align: justify;
+    margin: 20px auto 0;
+    padding: 0 100px 0 100px;
+    &::after {
+        content:'';
+        @include inline-rel;
+        width: 100%;
+    }
+    
+    .exlink {
+        @include inline-rel;
+        @include trans-one;
+        @include h3;
+        width: 20%;
+        font-size: 16px;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    #one  {
+        background-color: white;
+        border: 2px solid #92B540;
+        &:hover {
+            background-color: #92B540;
+            color: white;
+        }
+    }
+    #two  {
+        background-color: white;
+        border: 2px solid #009BA6;
+        &:hover {
+            background-color: #009BA6;
+            color: white;
+        }
+    }
+    #three  {
+        background-color: white;
+        border: 2px solid #CD4D58;
+        &:hover {
+            background-color: #CD4D58;
+            color: white;
+        }
+    }
+    #four  {
+        background-color: white;
+        border: 2px solid #CDC638;
+        &:hover {
+            background-color: #CDC638;
+            color: white;
+        }
+    }
+}
+
+#colophon{
+    @include block-rel;
+    font-size: 10px;
+    color: #646464;
+    width: 100%;
+    margin: 20px auto;
+    padding-left: 100px;
+}
+/*END FOOTER*/
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
