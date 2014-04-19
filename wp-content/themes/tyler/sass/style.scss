@@ -207,7 +207,8 @@ $title-font: "brandon-grotesque", sans-serif;
     font-family: "abril-display", sans-serif;
     font-size: 16px;
     font-weight: 100;
-    line-height: 16px;
+    line-height: 1.4;
+    margin-bottom: 1em;
     color: $black;
 }
 @mixin p-alt {
@@ -314,19 +315,23 @@ main {
     @include block-ab;
     @include trans-three;
     top: 60px; left: -60px;
-    width: 60; height: 240px;
+    width: 60;
     overflow: hidden;
     background: #333332;
     float: left;
     z-index: 1;
-    
     li {
         @include block-rel;
         width: 60px; height: 60px;
         background: none;
+        text-indent: -9999px;
         &:hover {
 
         }
+    }
+    a {
+        display: block;
+        height: 100%;
     }
     #home {
         background-image: url('images/icons/home.svg');
@@ -337,7 +342,7 @@ main {
             background-color: #92B540;
         }
     }
-    #about {
+    .about-link {
         background-image: url('images/icons/about.svg');
         background-size: 40px;
         background-repeat: no-repeat;
@@ -346,7 +351,7 @@ main {
             background-color: #009BA6;
         }
     }
-    #work {
+    .work-link {
         background-image: url('images/icons/work.svg');
         background-size: 40px;
         background-repeat: no-repeat;
@@ -356,7 +361,7 @@ main {
             background-color: #CD4D58;
         }
     }
-    #links {
+    .links-link {
         background-image: url('images/icons/links.svg');
         background-size: 40px;
         background-repeat: no-repeat;
@@ -383,28 +388,30 @@ main {
     @include block-ab;
     @include trans-two;
     top: 60px; right: 0;
-    width: 300px; height: 70px;
     background: white;
-    padding: 10px 0 0 10px;
+    min-width: 100px;
+    padding: 16px;
     z-index: 100;
-    
-    p {
+    .bkgd-title {
+        line-height: 1.5;
+    }
+    date {
         color: #646464;
     }
-    #right-tog {
+    .right-tog {
         @include block-ab;
         @include trans-one;
         top: 90px; right: 0;
         width: 40px; height: 40px;
         cursor: pointer;
-        &:hover #right-tog-plus {
+        &:hover .right-tog-plus {
             right: 60px;
         }
         &:hover p {
             right: 0px;
         } 
         
-        #right-tog-plus {
+        .right-tog-plus {
             @include block-ab;
             @include trans-one;
             top: 0px; right: 0;
@@ -442,13 +449,13 @@ main {
 /*END MAIN PAGE*/
     
 /*RIGHT*/
-#right {
+.right {
     @include block-ab;
     /*@include trans-two;*/
     top: 0; bottom: 0; right: -600px;
     width: 600px;
     background: white;
-    z-index: 0;
+    z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
     

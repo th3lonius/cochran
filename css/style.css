@@ -5,18 +5,7 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com 
 Twitter: @rich_clark
 */
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -28,8 +17,7 @@ time, mark, audio, video {
 body {
   line-height: 1; }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
 nav ul {
@@ -38,8 +26,7 @@ nav ul {
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
@@ -108,7 +95,7 @@ h1 {
 h2 {
   font-family: "brandon-grotesque", sans-serif;
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 40px;
   color: #333332; }
 
@@ -121,12 +108,10 @@ h2 {
 
 h3 {
   font-family: "brandon-grotesque", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 20px;
-  color: #333332;
-    text-transform: uppercase;
-}
+  color: #333332; }
 
 .h3-alt {
   font-family: "abril-display", sans-serif;
@@ -186,27 +171,27 @@ main {
   height: 60px;
   z-index: 100; }
   #main-menu:hover #menu {
-    transition: .1s all;
-    -moz-transition: .1s all;
-    -webkit-transition: .1s all;
-    transition-delay: .1s;
-    -moz-transition-delay: .1s;
-    -webkit-transition-delay: .1s;
+    transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    transition-delay: 0.1s;
+    -moz-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
     left: 0px; }
   #main-menu:hover span {
-    transition: .1s all;
-    -moz-transition: .1s all;
-    -webkit-transition: .1s all;
-    transition-delay: .1s;
-    -moz-transition-delay: .1s;
-    -webkit-transition-delay: .1s;
+    transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    transition-delay: 0.1s;
+    -moz-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
     width: 300px; }
   #main-menu span {
     display: block;
     position: absolute;
-    transition: .3s all;
-    -moz-transition: .3s all;
-    -webkit-transition: .3s all;
+    transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -webkit-transition: 0.3s all;
     transition-delay: 1s;
     -moz-transition-delay: 1s;
     -webkit-transition-delay: 1s;
@@ -228,15 +213,15 @@ main {
 #main-logo {
   display: block;
   position: relative;
-  transition: .3s all;
-  -moz-transition: .3s all;
-  -webkit-transition: .3s all;
+  transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
   transition-delay: 1s;
   -moz-transition-delay: 1s;
   -webkit-transition-delay: 1s;
   width: 60px;
   height: 60px;
-  background-image: url("images/icons/logo.svg");
+  background-image: url('images/icons/logo.svg');
   background-size: 60px;
   background-repeat: no-repeat;
   background-position: left;
@@ -244,20 +229,20 @@ main {
   float: left; }
 
 #main-logo:hover {
-  transition: .1s all;
-  -moz-transition: .1s all;
-  -webkit-transition: .1s all;
-  transition-delay: .1s;
-  -moz-transition-delay: .1s;
-  -webkit-transition-delay: .1s;
+  transition: 0.1s all;
+  -moz-transition: 0.1s all;
+  -webkit-transition: 0.1s all;
+  transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
   background-color: white; }
 
 #menu {
   display: block;
   position: absolute;
-  transition: .3s all;
-  -moz-transition: .3s all;
-  -webkit-transition: .3s all;
+  transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
   transition-delay: 1s;
   -moz-transition-delay: 1s;
   -webkit-transition-delay: 1s;
@@ -275,23 +260,22 @@ main {
     width: 60px;
     height: 60px;
     background: none; }
-
   #menu #home {
-    background-image: url("images/icons/home.svg");
+    background-image: url('images/icons/home.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
     #menu #home:hover {
       background-color: #92B540; }
   #menu #about {
-    background-image: url("images/icons/about.svg");
+    background-image: url('images/icons/about.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
     #menu #about:hover {
       background-color: #009BA6; }
   #menu #work {
-    background-image: url("images/icons/work.svg");
+    background-image: url('images/icons/work.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
@@ -299,7 +283,7 @@ main {
     #menu #work:hover {
       background-color: #CD4D58; }
   #menu #links {
-    background-image: url("images/icons/links.svg");
+    background-image: url('images/icons/links.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
@@ -308,8 +292,6 @@ main {
       background-color: #CDC638; }
 
 /*MAIN PAGE*/
-#main {
-  /*@include trans-two;*/ }
 
 .img-bkgd {
   display: block;
@@ -322,12 +304,12 @@ main {
 .bkgd-desc {
   display: block;
   position: absolute;
-  transition: .3s all;
-  -moz-transition: .3s all;
-  -webkit-transition: .3s all;
-  transition-delay: .1s;
-  -moz-transition-delay: .1s;
-  -webkit-transition-delay: .1s;
+  transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
   top: 60px;
   right: 0;
   width: 300px;
@@ -340,12 +322,12 @@ main {
   .bkgd-desc #right-tog {
     display: block;
     position: absolute;
-    transition: .1s all;
-    -moz-transition: .1s all;
-    -webkit-transition: .1s all;
-    transition-delay: .1s;
-    -moz-transition-delay: .1s;
-    -webkit-transition-delay: .1s;
+    transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    transition-delay: 0.1s;
+    -moz-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
     top: 90px;
     right: 0;
     width: 40px;
@@ -358,12 +340,12 @@ main {
     .bkgd-desc #right-tog #right-tog-plus {
       display: block;
       position: absolute;
-      transition: .1s all;
-      -moz-transition: .1s all;
-      -webkit-transition: .1s all;
-      transition-delay: .1s;
-      -moz-transition-delay: .1s;
-      -webkit-transition-delay: .1s;
+      transition: 0.1s all;
+      -moz-transition: 0.1s all;
+      -webkit-transition: 0.1s all;
+      transition-delay: 0.1s;
+      -moz-transition-delay: 0.1s;
+      -webkit-transition-delay: 0.1s;
       top: 0px;
       right: 0;
       width: 40px;
@@ -392,12 +374,12 @@ main {
     .bkgd-desc #right-tog p {
       display: block;
       position: absolute;
-      transition: .1s all;
-      -moz-transition: .1s all;
-      -webkit-transition: .1s all;
-      transition-delay: .1s;
-      -moz-transition-delay: .1s;
-      -webkit-transition-delay: .1s;
+      transition: 0.1s all;
+      -moz-transition: 0.1s all;
+      -webkit-transition: 0.1s all;
+      transition-delay: 0.1s;
+      -moz-transition-delay: 0.1s;
+      -webkit-transition-delay: 0.1s;
       top: 0px;
       right: -100px;
       width: 100px;
@@ -416,8 +398,8 @@ main {
   bottom: 0;
   right: -600px;
   width: 600px;
-  background: rgba(0,0,0,0.8);
-  z-index: 0;
+  background: white;
+  z-index: 999;
   overflow-x: hidden;
   overflow-y: auto; }
   #right #content-cont {
@@ -426,9 +408,8 @@ main {
     width: 90%;
     margin: 80px auto auto; }
     #right #content-cont h2 {
-      color: #FFF; }
+      color: #CD4D58; }
     #right #content-cont p {
-        color: #FFF;
       line-height: 1.7; }
     #right #content-cont .foot {
       display: block;
@@ -496,7 +477,7 @@ main {
   overflow-y: auto;
   background: white;
   z-index: 100; }
-  #left .work-grid {
+  #left #work-grid {
     display: block;
     position: relative;
     width: 100%;
@@ -504,94 +485,94 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify; }
-    #left .work-grid::after {
+    #left #work-grid::after {
       content: '';
       display: inline-block;
       position: relative;
       width: 100%; }
-    #left .work-grid li {
+    #left #work-grid li {
       display: inline-block;
       position: relative;
-      transition: .1s all;
-      -moz-transition: .1s all;
-      -webkit-transition: .1s all;
-      transition-delay: .1s;
-      -moz-transition-delay: .1s;
-      -webkit-transition-delay: .1s;
+      transition: 0.1s all;
+      -moz-transition: 0.1s all;
+      -webkit-transition: 0.1s all;
+      transition-delay: 0.1s;
+      -moz-transition-delay: 0.1s;
+      -webkit-transition-delay: 0.1s;
       width: 46%;
       height: 200px;
       margin: 1%;
-      background-image: url("images/images/gug3.jpg");
+      background-image: url('images/images/gug3.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden; }
-      #left .work-grid li:hover div {
+      #left #work-grid li:hover div {
         top: 102px; }
-      #left .work-grid li:hover a {
-        transition: .1s all;
-        -moz-transition: .1s all;
-        -webkit-transition: .1s all;
-        transition-delay: .1s;
-        -moz-transition-delay: .1s;
-        -webkit-transition-delay: .1s;
+      #left #work-grid li:hover a {
+        transition: 0.1s all;
+        -moz-transition: 0.1s all;
+        -webkit-transition: 0.1s all;
+        transition-delay: 0.1s;
+        -moz-transition-delay: 0.1s;
+        -webkit-transition-delay: 0.1s;
         top: 0; }
-      #left .work-grid li a {
+      #left #work-grid li a {
         content: '';
         display: block;
         position: absolute;
         width: 100%;
         height: 110px;
         top: -110px;
-        background-image: url("images/icons/magglass.svg");
+        background-image: url('images/icons/magglass.svg');
         background-size: 25px;
         background-position: center;
         background-repeat: no-repeat; }
-      #left .work-grid li div {
+      #left #work-grid li div {
         display: block;
         position: absolute;
-        transition: .1s all;
-        -moz-transition: .1s all;
-        -webkit-transition: .1s all;
-        transition-delay: .1s;
-        -moz-transition-delay: .1s;
-        -webkit-transition-delay: .1s;
+        transition: 0.1s all;
+        -moz-transition: 0.1s all;
+        -webkit-transition: 0.1s all;
+        transition-delay: 0.1s;
+        -moz-transition-delay: 0.1s;
+        -webkit-transition-delay: 0.1s;
         top: 200px;
         background: white;
         width: 260px; }
-        #left .work-grid li div h3 {
+        #left #work-grid li div h3 {
           display: block;
           position: relative;
           width: 100%;
           padding: 10px 10px 5px;
           background: #CD4D58;
           color: white; }
-        #left .work-grid li div p {
+        #left #work-grid li div p {
           display: block;
           position: relative;
           width: 100%;
           font-size: 16px;
           padding: 24px 10px; }
-    #left .work-grid #work-one {
-      background-image: url("images/images/thumbs/gug1.jpg"); }
-    #left .work-grid #work-two {
-      background-image: url("images/images/thumbs/walt1.jpg"); }
-    #left .work-grid #work-three {
-      background-image: url("images/images/thumbs/brain.jpg"); }
-    #left .work-grid #work-four {
-      background-image: url("images/images/thumbs/weisman.jpg"); }
-    #left .work-grid #work-five {
-      background-image: url("images/images/thumbs/dancing.jpg"); }
-    #left .work-grid #work-six {
-      background-image: url("images/images/thumbs/dus.jpg"); }
-    #left .work-grid #work-seven {
-      background-image: url("images/images/thumbs/music.jpg"); }
-    #left .work-grid #work-eight {
-      background-image: url("images/images/thumbs/stata.jpg"); }
-    #left .work-grid #work-nine {
-      background-image: url("images/images/thumbs/spruce.jpg"); }
-    #left .work-grid #work-ten {
-      background-image: url("images/images/thumbs/jay.jpg"); }
+    #left #work-grid #work-one {
+      background-image: url('images/images/thumbs/gug1.jpg'); }
+    #left #work-grid #work-two {
+      background-image: url('images/images/thumbs/walt1.jpg'); }
+    #left #work-grid #work-three {
+      background-image: url('images/images/thumbs/brain.jpg'); }
+    #left #work-grid #work-four {
+      background-image: url('images/images/thumbs/weisman.jpg'); }
+    #left #work-grid #work-five {
+      background-image: url('images/images/thumbs/dancing.jpg'); }
+    #left #work-grid #work-six {
+      background-image: url('images/images/thumbs/dus.jpg'); }
+    #left #work-grid #work-seven {
+      background-image: url('images/images/thumbs/music.jpg'); }
+    #left #work-grid #work-eight {
+      background-image: url('images/images/thumbs/stata.jpg'); }
+    #left #work-grid #work-nine {
+      background-image: url('images/images/thumbs/spruce.jpg'); }
+    #left #work-grid #work-ten {
+      background-image: url('images/images/thumbs/jay.jpg'); }
 
 /*FOOTER*/
 #footer {
@@ -626,12 +607,12 @@ main {
   #exlinks-cont .exlink {
     display: inline-block;
     position: relative;
-    transition: .1s all;
-    -moz-transition: .1s all;
-    -webkit-transition: .1s all;
-    transition-delay: .1s;
-    -moz-transition-delay: .1s;
-    -webkit-transition-delay: .1s;
+    transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    transition-delay: 0.1s;
+    -moz-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
     font-family: "brandon-grotesque", sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -676,3 +657,4 @@ main {
   padding-left: 100px; }
 
 /*END FOOTER*/
+/*# sourceMappingURL=style.css.map */

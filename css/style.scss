@@ -444,7 +444,7 @@ main {
     top: 0; bottom: 0; right: -600px;
     width: 600px;
     background: white;
-    z-index: 0;
+    z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
     
