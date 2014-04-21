@@ -14,25 +14,7 @@ get_header(); ?>
 
 ?>
 
-<section class="left">
-
-<?php if (is_front_page() || is_home()) {
-
-<?php if ( have_posts() ) : ?>
-
-    <?php while ( have_posts() ) : the_post(); ?>
-
-		<article class="right">
-			<div id="content-cont">
-				<?php the_field( 'description' ); ?>
-			</div>
-		</article>
-
-    <?php endwhile; ?>
-
-<?php endif; ?>
-
-} else {
+<section class="right">
 
 <?php if ( $info_query->have_posts() ) : ?>
 
@@ -48,7 +30,6 @@ get_header(); ?>
 
 <?php endif; ?>
 
-}
 
 <?php wp_reset_postdata(); ?>
 

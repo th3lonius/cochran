@@ -12,18 +12,17 @@
 
 <?php wp_footer(); ?>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="//use.typekit.net/qks3zfj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<!-- jQuery ScrollTo Plugin -->
-<script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
-<!-- History.js -->
-<script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
-<!-- Ajaxify -->
-<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
+	<!-- jQuery ScrollTo Plugin -->
+	<script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
+	<!-- History.js -->
+	<script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+	<!-- Ajaxify -->
+	<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
 </body>
 </html>
