@@ -23,7 +23,7 @@
 
 	<header role="banner">
         <nav id="main-menu">
-            <div id="main-logo"><span><h1><?php bloginfo( 'name' ); ?></h1></span></div>
+            <div id="main-logo"><h1><?php bloginfo( 'name' ); ?></h1></div>
             <?php
 
                 $args = array(

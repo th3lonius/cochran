@@ -227,16 +227,17 @@ main {
     -webkit-transition-delay: .1s;
     left: 0px; }
   /* line 277, sass/style.scss */
-  #main-menu:hover span {
+  #main-menu:hover h1 {
     transition: .1s all;
     -moz-transition: .1s all;
     -webkit-transition: .1s all;
     transition-delay: .1s;
     -moz-transition-delay: .1s;
     -webkit-transition-delay: .1s;
-    width: 300px; }
-  /* line 282, sass/style.scss */
-  #main-menu span {
+    padding: 10px 20px;
+    width: 380px; }
+  /* line 283, sass/style.scss */
+  #main-menu h1 {
     display: block;
     position: absolute;
     transition: .3s all;
@@ -249,19 +250,12 @@ main {
     left: 60px;
     height: 60px;
     width: 0;
-    overflow: hidden;
-    padding-top: 10px;
-    background: #333332; }
-  /* line 292, sass/style.scss */
-  #main-menu h1 {
-    display: block;
-    position: absolute;
-    height: 40px;
-    width: 400px;
     color: white;
-    margin-left: 10px; }
+    overflow: hidden;
+    background: #333332;
+    text-transform: uppercase; }
 
-/* line 299, sass/style.scss */
+/* line 294, sass/style.scss */
 #main-logo {
   display: block;
   position: relative;
@@ -280,7 +274,7 @@ main {
   background-color: none;
   float: left; }
 
-/* line 310, sass/style.scss */
+/* line 305, sass/style.scss */
 #main-logo:hover {
   transition: .1s all;
   -moz-transition: .1s all;
@@ -290,7 +284,7 @@ main {
   -webkit-transition-delay: .1s;
   background-color: white; }
 
-/* line 314, sass/style.scss */
+/* line 309, sass/style.scss */
 #menu {
   display: block;
   position: absolute;
@@ -307,7 +301,7 @@ main {
   background: #333332;
   float: left;
   z-index: 1; }
-  /* line 323, sass/style.scss */
+  /* line 318, sass/style.scss */
   #menu li {
     display: block;
     position: relative;
@@ -315,55 +309,55 @@ main {
     height: 60px;
     background: none;
     text-indent: -9999px; }
-  /* line 332, sass/style.scss */
+  /* line 327, sass/style.scss */
   #menu a {
     display: block;
     height: 100%; }
-  /* line 336, sass/style.scss */
+  /* line 331, sass/style.scss */
   #menu #home {
     background-image: url("images/icons/home.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
-    /* line 341, sass/style.scss */
+    /* line 336, sass/style.scss */
     #menu #home:hover {
       background-color: #92B540; }
-  /* line 345, sass/style.scss */
+  /* line 340, sass/style.scss */
   #menu .about-link {
     background-image: url("images/icons/about.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
-    /* line 350, sass/style.scss */
+    /* line 345, sass/style.scss */
     #menu .about-link:hover {
       background-color: #009BA6; }
-  /* line 354, sass/style.scss */
+  /* line 349, sass/style.scss */
   #menu .work-link {
     background-image: url("images/icons/work.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
-    /* line 360, sass/style.scss */
+    /* line 355, sass/style.scss */
     #menu .work-link:hover {
       background-color: #CD4D58; }
-  /* line 364, sass/style.scss */
+  /* line 359, sass/style.scss */
   #menu .links-link {
     background-image: url("images/icons/links.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
-    /* line 370, sass/style.scss */
+    /* line 365, sass/style.scss */
     #menu .links-link:hover {
       background-color: #CDC638; }
 
 /*MAIN PAGE*/
-/* line 377, sass/style.scss */
+/* line 372, sass/style.scss */
 #main {
   /*@include trans-two;*/ }
 
-/* line 380, sass/style.scss */
+/* line 375, sass/style.scss */
 .img-bkgd {
   display: block;
   position: relative;
@@ -372,7 +366,7 @@ main {
   height: auto;
   min-height: 100%; }
 
-/* line 387, sass/style.scss */
+/* line 382, sass/style.scss */
 .bkgd-desc {
   display: block;
   position: absolute;
@@ -385,16 +379,16 @@ main {
   top: 60px;
   right: 0;
   background: white;
-  min-width: 100px;
+  min-width: 200px;
   padding: 16px;
   z-index: 100; }
-  /* line 395, sass/style.scss */
+  /* line 390, sass/style.scss */
   .bkgd-desc .bkgd-title {
     line-height: 1.5; }
-  /* line 398, sass/style.scss */
+  /* line 393, sass/style.scss */
   .bkgd-desc date {
     color: #646464; }
-  /* line 401, sass/style.scss */
+  /* line 396, sass/style.scss */
   .bkgd-desc .right-tog {
     display: block;
     position: absolute;
@@ -409,13 +403,13 @@ main {
     width: 40px;
     height: 40px;
     cursor: pointer; }
-    /* line 407, sass/style.scss */
+    /* line 402, sass/style.scss */
     .bkgd-desc .right-tog:hover .right-tog-plus {
       right: 60px; }
-    /* line 410, sass/style.scss */
+    /* line 405, sass/style.scss */
     .bkgd-desc .right-tog:hover p {
       right: 0px; }
-    /* line 414, sass/style.scss */
+    /* line 409, sass/style.scss */
     .bkgd-desc .right-tog .right-tog-plus {
       display: block;
       position: absolute;
@@ -430,10 +424,10 @@ main {
       width: 40px;
       height: 40px;
       background: white; }
-      /* line 420, sass/style.scss */
+      /* line 415, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus:hover {
         right: 60px; }
-      /* line 423, sass/style.scss */
+      /* line 418, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus::before {
         content: '';
         display: block;
@@ -443,7 +437,7 @@ main {
         width: 4px;
         height: 26px;
         background: #CD4D58; }
-      /* line 430, sass/style.scss */
+      /* line 425, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus::after {
         content: '';
         display: block;
@@ -453,7 +447,7 @@ main {
         width: 26px;
         height: 4px;
         background: #CD4D58; }
-    /* line 438, sass/style.scss */
+    /* line 433, sass/style.scss */
     .bkgd-desc .right-tog p {
       display: block;
       position: absolute;
@@ -473,7 +467,7 @@ main {
 
 /*END MAIN PAGE*/
 /*RIGHT*/
-/* line 452, sass/style.scss */
+/* line 447, sass/style.scss */
 .right {
   display: block;
   position: absolute;
@@ -486,24 +480,24 @@ main {
   z-index: 999;
   overflow-x: hidden;
   overflow-y: auto; }
-  /* line 462, sass/style.scss */
+  /* line 457, sass/style.scss */
   .right #content-cont {
     display: block;
     position: relative;
     width: 90%;
     margin: 80px auto auto; }
-    /* line 467, sass/style.scss */
+    /* line 462, sass/style.scss */
     .right #content-cont h2 {
       color: #CD4D58; }
-    /* line 470, sass/style.scss */
+    /* line 465, sass/style.scss */
     .right #content-cont p {
       line-height: 1.7; }
-    /* line 473, sass/style.scss */
+    /* line 468, sass/style.scss */
     .right #content-cont .foot {
       display: block;
       position: relative;
       height: 160px; }
-      /* line 477, sass/style.scss */
+      /* line 472, sass/style.scss */
       .right #content-cont .foot .click-thru {
         display: inline-block;
         position: relative;
@@ -517,55 +511,55 @@ main {
         padding: 10px;
         vertical-align: bottom;
         margin: 100px 0 0 0; }
-      /* line 486, sass/style.scss */
+      /* line 481, sass/style.scss */
       .right #content-cont .foot #work-thru {
         @incldue trans-one;
         float: left;
         color: #CD4D58; }
-        /* line 490, sass/style.scss */
+        /* line 485, sass/style.scss */
         .right #content-cont .foot #work-thru:hover {
           background: #CD4D58;
           color: white; }
-      /* line 495, sass/style.scss */
+      /* line 490, sass/style.scss */
       .right #content-cont .foot #about-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 499, sass/style.scss */
+        /* line 494, sass/style.scss */
         .right #content-cont .foot #about-thru:hover {
           background: #009BA6;
           color: white; }
-      /* line 504, sass/style.scss */
+      /* line 499, sass/style.scss */
       .right #content-cont .foot #links-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 508, sass/style.scss */
+        /* line 503, sass/style.scss */
         .right #content-cont .foot #links-thru:hover {
           background: #009BA6;
           color: white; }
-      /* line 513, sass/style.scss */
+      /* line 508, sass/style.scss */
       .right #content-cont .foot #prev-thru {
         @incldue trans-one;
         float: left;
         color: #CD4D58; }
-        /* line 517, sass/style.scss */
+        /* line 512, sass/style.scss */
         .right #content-cont .foot #prev-thru:hover {
           background: #CD4D58;
           color: white; }
-      /* line 522, sass/style.scss */
+      /* line 517, sass/style.scss */
       .right #content-cont .foot #next-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 526, sass/style.scss */
+        /* line 521, sass/style.scss */
         .right #content-cont .foot #next-thru:hover {
           background: #009BA6;
           color: white; }
 
 /*END RIGHT*/
 /*LEFT SECTION*/
-/* line 537, sass/style.scss */
+/* line 532, sass/style.scss */
 #left {
   display: block;
   position: absolute;
@@ -577,7 +571,7 @@ main {
   overflow-y: auto;
   background: white;
   z-index: 100; }
-  /* line 546, sass/style.scss */
+  /* line 541, sass/style.scss */
   #left #work-grid {
     display: block;
     position: relative;
@@ -586,13 +580,13 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify; }
-    /* line 553, sass/style.scss */
+    /* line 548, sass/style.scss */
     #left #work-grid::after {
       content: '';
       display: inline-block;
       position: relative;
       width: 100%; }
-    /* line 559, sass/style.scss */
+    /* line 554, sass/style.scss */
     #left #work-grid li {
       display: inline-block;
       position: relative;
@@ -610,10 +604,10 @@ main {
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden; }
-      /* line 569, sass/style.scss */
+      /* line 564, sass/style.scss */
       #left #work-grid li:hover div {
         top: 102px; }
-      /* line 572, sass/style.scss */
+      /* line 567, sass/style.scss */
       #left #work-grid li:hover a {
         transition: .1s all;
         -moz-transition: .1s all;
@@ -622,7 +616,7 @@ main {
         -moz-transition-delay: .1s;
         -webkit-transition-delay: .1s;
         top: 0; }
-      /* line 577, sass/style.scss */
+      /* line 572, sass/style.scss */
       #left #work-grid li a {
         content: '';
         display: block;
@@ -634,7 +628,7 @@ main {
         background-size: 25px;
         background-position: center;
         background-repeat: no-repeat; }
-      /* line 589, sass/style.scss */
+      /* line 584, sass/style.scss */
       #left #work-grid li div {
         display: block;
         position: absolute;
@@ -647,7 +641,7 @@ main {
         top: 200px;
         background: white;
         width: 260px; }
-        /* line 596, sass/style.scss */
+        /* line 591, sass/style.scss */
         #left #work-grid li div h3 {
           display: block;
           position: relative;
@@ -655,46 +649,46 @@ main {
           padding: 10px 10px 5px;
           background: #CD4D58;
           color: white; }
-        /* line 604, sass/style.scss */
+        /* line 599, sass/style.scss */
         #left #work-grid li div p {
           display: block;
           position: relative;
           width: 100%;
           font-size: 16px;
           padding: 24px 10px; }
-    /* line 613, sass/style.scss */
+    /* line 608, sass/style.scss */
     #left #work-grid #work-one {
       background-image: url("images/images/thumbs/gug1.jpg"); }
-    /* line 616, sass/style.scss */
+    /* line 611, sass/style.scss */
     #left #work-grid #work-two {
       background-image: url("images/images/thumbs/walt1.jpg"); }
-    /* line 619, sass/style.scss */
+    /* line 614, sass/style.scss */
     #left #work-grid #work-three {
       background-image: url("images/images/thumbs/brain.jpg"); }
-    /* line 622, sass/style.scss */
+    /* line 617, sass/style.scss */
     #left #work-grid #work-four {
       background-image: url("images/images/thumbs/weisman.jpg"); }
-    /* line 625, sass/style.scss */
+    /* line 620, sass/style.scss */
     #left #work-grid #work-five {
       background-image: url("images/images/thumbs/dancing.jpg"); }
-    /* line 628, sass/style.scss */
+    /* line 623, sass/style.scss */
     #left #work-grid #work-six {
       background-image: url("images/images/thumbs/dus.jpg"); }
-    /* line 631, sass/style.scss */
+    /* line 626, sass/style.scss */
     #left #work-grid #work-seven {
       background-image: url("images/images/thumbs/music.jpg"); }
-    /* line 634, sass/style.scss */
+    /* line 629, sass/style.scss */
     #left #work-grid #work-eight {
       background-image: url("images/images/thumbs/stata.jpg"); }
-    /* line 637, sass/style.scss */
+    /* line 632, sass/style.scss */
     #left #work-grid #work-nine {
       background-image: url("images/images/thumbs/spruce.jpg"); }
-    /* line 640, sass/style.scss */
+    /* line 635, sass/style.scss */
     #left #work-grid #work-ten {
       background-image: url("images/images/thumbs/jay.jpg"); }
 
 /*FOOTER*/
-/* line 649, sass/style.scss */
+/* line 644, sass/style.scss */
 #footer {
   display: block;
   position: absolute;
@@ -705,7 +699,7 @@ main {
   height: 200px;
   background: white; }
 
-/* line 657, sass/style.scss */
+/* line 652, sass/style.scss */
 #exlinks-title {
   display: block;
   position: relative;
@@ -713,7 +707,7 @@ main {
   margin: 30px auto 20px;
   padding-left: 100px; }
 
-/* line 664, sass/style.scss */
+/* line 659, sass/style.scss */
 #exlinks-cont {
   display: block;
   position: relative;
@@ -721,13 +715,13 @@ main {
   text-align: justify;
   margin: 20px auto 0;
   padding: 0 100px 0 100px; }
-  /* line 670, sass/style.scss */
+  /* line 665, sass/style.scss */
   #exlinks-cont::after {
     content: '';
     display: inline-block;
     position: relative;
     width: 100%; }
-  /* line 676, sass/style.scss */
+  /* line 671, sass/style.scss */
   #exlinks-cont .exlink {
     display: inline-block;
     position: relative;
@@ -746,40 +740,40 @@ main {
     font-size: 16px;
     padding: 10px;
     text-align: center; }
-  /* line 686, sass/style.scss */
+  /* line 681, sass/style.scss */
   #exlinks-cont #one {
     background-color: white;
     border: 2px solid #92B540; }
-    /* line 689, sass/style.scss */
+    /* line 684, sass/style.scss */
     #exlinks-cont #one:hover {
       background-color: #92B540;
       color: white; }
-  /* line 694, sass/style.scss */
+  /* line 689, sass/style.scss */
   #exlinks-cont #two {
     background-color: white;
     border: 2px solid #009BA6; }
-    /* line 697, sass/style.scss */
+    /* line 692, sass/style.scss */
     #exlinks-cont #two:hover {
       background-color: #009BA6;
       color: white; }
-  /* line 702, sass/style.scss */
+  /* line 697, sass/style.scss */
   #exlinks-cont #three {
     background-color: white;
     border: 2px solid #CD4D58; }
-    /* line 705, sass/style.scss */
+    /* line 700, sass/style.scss */
     #exlinks-cont #three:hover {
       background-color: #CD4D58;
       color: white; }
-  /* line 710, sass/style.scss */
+  /* line 705, sass/style.scss */
   #exlinks-cont #four {
     background-color: white;
     border: 2px solid #CDC638; }
-    /* line 713, sass/style.scss */
+    /* line 708, sass/style.scss */
     #exlinks-cont #four:hover {
       background-color: #CDC638;
       color: white; }
 
-/* line 720, sass/style.scss */
+/* line 715, sass/style.scss */
 #colophon {
   display: block;
   position: relative;

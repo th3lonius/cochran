@@ -182,15 +182,16 @@ main {
     -moz-transition-delay: 0.1s;
     -webkit-transition-delay: 0.1s;
     left: 0px; }
-  #main-menu:hover span {
+  #main-menu:hover h1 {
     transition: 0.1s all;
     -moz-transition: 0.1s all;
     -webkit-transition: 0.1s all;
     transition-delay: 0.1s;
     -moz-transition-delay: 0.1s;
     -webkit-transition-delay: 0.1s;
-    width: 300px; }
-  #main-menu span {
+    padding: 10px 20px;
+    width: 380px; }
+  #main-menu h1 {
     display: block;
     position: absolute;
     transition: 0.3s all;
@@ -203,16 +204,10 @@ main {
     left: 60px;
     height: 60px;
     width: 0;
-    overflow: hidden;
-    padding-top: 10px;
-    background: #333332; }
-  #main-menu h1 {
-    display: block;
-    position: absolute;
-    height: 40px;
-    width: 400px;
     color: white;
-    margin-left: 10px; }
+    overflow: hidden;
+    background: #333332;
+    text-transform: uppercase; }
 
 #main-logo {
   display: block;
@@ -320,7 +315,7 @@ main {
   top: 60px;
   right: 0;
   background: white;
-  min-width: 100px;
+  min-width: 200px;
   padding: 16px;
   z-index: 100; }
   .bkgd-desc .bkgd-title {

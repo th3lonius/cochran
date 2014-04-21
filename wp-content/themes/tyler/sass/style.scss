@@ -274,26 +274,21 @@ main {
         @include trans-one;
         left: 0px;
     }
-    &:hover span {
+    &:hover h1 {
         @include trans-one;
-        width: 300px;
-    }
-    
-    span {
-        @include block-ab;
-        @include trans-three;
-        top: 0; left: 60px;
-        height: 60px; width: 0;
-        overflow: hidden;
-        padding-top: 10px;
-        background: $black;
+        padding: 10px 20px;
+        width: 380px;
     }
     
     h1 {
         @include block-ab;
-        height: 40px; width: 400px;
+        @include trans-three;
+        top: 0; left: 60px;
+        height: 60px; width: 0;
         color: white;
-        margin-left: 10px;
+        overflow: hidden;
+        background: $black;
+        text-transform: uppercase;
     }
 }
 #main-logo {
@@ -389,7 +384,7 @@ main {
     @include trans-two;
     top: 60px; right: 0;
     background: white;
-    min-width: 100px;
+    min-width: 200px;
     padding: 16px;
     z-index: 100;
     .bkgd-title {

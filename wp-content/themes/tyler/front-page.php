@@ -3,6 +3,20 @@
 
     <section id="main">
 		<main id="content" role="main">
+            <figcaption class="bkgd-desc">
+                <h3 class="bkgd-title"><?php echo $bloginfo = get_bloginfo( name ); ?></h3>
+                <p id="bkgd-sub"><?php the_field( 'date' ); ?></p>
+                <div class="right-tog">
+                    <div class="right-tog-plus"></div>
+                    <p class="p-alt">Learn More</p>
+                </div>
+            </figcaption>
+            <article class="right">
+                <div id="content-cont">
+                    <h2><?php the_title() ;?></h2>
+                    <?php the_field( 'description' ); ?>
+                </div>
+            </article>
             <!-- Home page slider of portfolio work -->
             <?php
 
