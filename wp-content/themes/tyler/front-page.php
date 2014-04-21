@@ -33,7 +33,7 @@
 
             $rows = get_field('images'); // get all the rows
             $first_row = $rows[0]; // get the first row
-            $first_row_image = $first_row['image' ]; // get the sub field value 
+            $first_row_image = $first_row['image' ]; // get the sub field value
             $image = wp_get_attachment_image_src( $first_row_image, 'full' );
 
         ?>
@@ -54,10 +54,7 @@
 
     <?php get_template_part( 'left', 'none' ); ?>
 
-    <article class="right">
-        <div id="content-cont">
-            <?php the_field( 'description' ); ?>
-        </div>
-    </article>
+	<?php get_template_part( 'right', 'none' ); ?>
+
 
 <?php get_footer(); ?>
