@@ -7,7 +7,7 @@ get_header(); ?>
 <?php
 
     $args = array(
-        'post-type' => 'work'
+        'post_type' => 'work'
     );
 
     $the_query = new WP_Query( $args );

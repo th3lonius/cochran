@@ -1,5 +1,5 @@
 
-<section id="footer">
+<footer id="footer">
     <h2 id="exlinks-title">External Links</h2>
     <div id="exlinks-cont">
         <a href="http://en.wikipedia.org/wiki/Frank_Gehry" id="one" class="exlink">Wikipedia</a>
@@ -8,7 +8,7 @@
         <a href="http://www.archdaily.com/tag/frank-gehry/" id="four" class="exlink">Architecture Daily</a>
     </div>
     <p id="colophon">&copy; Copyright <?php echo date( 'Y' ); ?></p>
-</section>
+</footer>
 
 <?php wp_footer(); ?>
 
@@ -18,6 +18,12 @@
     <![endif]-->
     <script type="text/javascript" src="//use.typekit.net/qks3zfj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- jQuery ScrollTo Plugin -->
+<script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
+<!-- History.js -->
+<script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+<!-- Ajaxify -->
+<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
 </body>
 </html>

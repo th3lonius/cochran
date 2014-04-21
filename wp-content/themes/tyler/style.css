@@ -108,7 +108,7 @@ body, html {
   height: 100%; }
 
 /* line 109, sass/style.scss */
-body {
+body, #content {
   overflow: hidden; }
 
 /* line 112, sass/style.scss */
@@ -314,13 +314,13 @@ main {
     display: block;
     height: 100%; }
   /* line 331, sass/style.scss */
-  #menu #home {
+  #menu .home {
     background-image: url("images/icons/home.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
     /* line 336, sass/style.scss */
-    #menu #home:hover {
+    #menu .home:hover {
       background-color: #92B540; }
   /* line 340, sass/style.scss */
   #menu .about-link {
@@ -332,24 +332,24 @@ main {
     #menu .about-link:hover {
       background-color: #009BA6; }
   /* line 349, sass/style.scss */
-  #menu .work-link {
+  #menu .work {
     background-image: url("images/icons/work.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
     /* line 355, sass/style.scss */
-    #menu .work-link:hover {
+    #menu .work:hover {
       background-color: #CD4D58; }
   /* line 359, sass/style.scss */
-  #menu .links-link {
+  #menu .links {
     background-image: url("images/icons/links.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
     /* line 365, sass/style.scss */
-    #menu .links-link:hover {
+    #menu .links:hover {
       background-color: #CDC638; }
 
 /*MAIN PAGE*/
@@ -474,8 +474,8 @@ main {
   /*@include trans-two;*/
   top: 0;
   bottom: 0;
-  right: -600px;
-  width: 600px;
+  right: -550px;
+  width: 550px;
   background: white;
   z-index: 999;
   overflow-x: hidden;
@@ -530,12 +530,12 @@ main {
           background: #009BA6;
           color: white; }
       /* line 499, sass/style.scss */
-      .right #content-cont .foot #links-thru {
+      .right #content-cont .foot .links-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
         /* line 503, sass/style.scss */
-        .right #content-cont .foot #links-thru:hover {
+        .right #content-cont .foot .links-thru:hover {
           background: #009BA6;
           color: white; }
       /* line 508, sass/style.scss */
@@ -560,7 +560,7 @@ main {
 /*END RIGHT*/
 /*LEFT SECTION*/
 /* line 532, sass/style.scss */
-#left {
+.left {
   display: block;
   position: absolute;
   /*@include trans-two;*/
@@ -572,7 +572,7 @@ main {
   background: white;
   z-index: 100; }
   /* line 541, sass/style.scss */
-  #left #work-grid {
+  .left .work-grid {
     display: block;
     position: relative;
     width: 100%;
@@ -581,13 +581,13 @@ main {
     overflow-y: auto;
     text-align: justify; }
     /* line 548, sass/style.scss */
-    #left #work-grid::after {
+    .left .work-grid::after {
       content: '';
       display: inline-block;
       position: relative;
       width: 100%; }
     /* line 554, sass/style.scss */
-    #left #work-grid li {
+    .left .work-grid li {
       display: inline-block;
       position: relative;
       transition: .1s all;
@@ -605,10 +605,10 @@ main {
       background-repeat: no-repeat;
       overflow: hidden; }
       /* line 564, sass/style.scss */
-      #left #work-grid li:hover div {
+      .left .work-grid li:hover div {
         top: 102px; }
       /* line 567, sass/style.scss */
-      #left #work-grid li:hover a {
+      .left .work-grid li:hover a {
         transition: .1s all;
         -moz-transition: .1s all;
         -webkit-transition: .1s all;
@@ -617,7 +617,7 @@ main {
         -webkit-transition-delay: .1s;
         top: 0; }
       /* line 572, sass/style.scss */
-      #left #work-grid li a {
+      .left .work-grid li a {
         content: '';
         display: block;
         position: absolute;
@@ -629,7 +629,7 @@ main {
         background-position: center;
         background-repeat: no-repeat; }
       /* line 584, sass/style.scss */
-      #left #work-grid li div {
+      .left .work-grid li div {
         display: block;
         position: absolute;
         transition: .1s all;
@@ -642,7 +642,7 @@ main {
         background: white;
         width: 260px; }
         /* line 591, sass/style.scss */
-        #left #work-grid li div h3 {
+        .left .work-grid li div h3 {
           display: block;
           position: relative;
           width: 100%;
@@ -650,46 +650,46 @@ main {
           background: #CD4D58;
           color: white; }
         /* line 599, sass/style.scss */
-        #left #work-grid li div p {
+        .left .work-grid li div p {
           display: block;
           position: relative;
           width: 100%;
           font-size: 16px;
           padding: 24px 10px; }
     /* line 608, sass/style.scss */
-    #left #work-grid #work-one {
+    .left .work-grid #work-one {
       background-image: url("images/images/thumbs/gug1.jpg"); }
     /* line 611, sass/style.scss */
-    #left #work-grid #work-two {
+    .left .work-grid #work-two {
       background-image: url("images/images/thumbs/walt1.jpg"); }
     /* line 614, sass/style.scss */
-    #left #work-grid #work-three {
+    .left .work-grid #work-three {
       background-image: url("images/images/thumbs/brain.jpg"); }
     /* line 617, sass/style.scss */
-    #left #work-grid #work-four {
+    .left .work-grid #work-four {
       background-image: url("images/images/thumbs/weisman.jpg"); }
     /* line 620, sass/style.scss */
-    #left #work-grid #work-five {
+    .left .work-grid #work-five {
       background-image: url("images/images/thumbs/dancing.jpg"); }
     /* line 623, sass/style.scss */
-    #left #work-grid #work-six {
+    .left .work-grid #work-six {
       background-image: url("images/images/thumbs/dus.jpg"); }
     /* line 626, sass/style.scss */
-    #left #work-grid #work-seven {
+    .left .work-grid #work-seven {
       background-image: url("images/images/thumbs/music.jpg"); }
     /* line 629, sass/style.scss */
-    #left #work-grid #work-eight {
+    .left .work-grid #work-eight {
       background-image: url("images/images/thumbs/stata.jpg"); }
     /* line 632, sass/style.scss */
-    #left #work-grid #work-nine {
+    .left .work-grid #work-nine {
       background-image: url("images/images/thumbs/spruce.jpg"); }
     /* line 635, sass/style.scss */
-    #left #work-grid #work-ten {
+    .left .work-grid #work-ten {
       background-image: url("images/images/thumbs/jay.jpg"); }
 
 /*FOOTER*/
 /* line 644, sass/style.scss */
-#footer {
+footer {
   display: block;
   position: absolute;
   /*@include trans-two;*/
