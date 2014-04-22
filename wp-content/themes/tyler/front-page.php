@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<span style="font-size: 26px; color: red; float: right;">I am front-page</span>
-
 <section id="content" role="main">
     <figcaption class="bkgd-desc">
         <h3 class="bkgd-title"><?php echo $bloginfo = get_bloginfo( name ); ?></h3>

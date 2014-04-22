@@ -1,4 +1,4 @@
-/* 
+/*
 Theme Name: Tyler
 Theme URI: http://tylercochran.com
 Description: A custom Wordpress portfolio site for Tyler Cochran
@@ -18,7 +18,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -35,7 +35,7 @@ body {
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -71,7 +71,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -94,7 +94,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -106,7 +106,7 @@ input, select {
 body, html {
     height: 100%;
 }
-body, #content { 
+body, #content {
     overflow: hidden;
 }
 * {
@@ -124,6 +124,7 @@ $blue: #009BA6;
 $red: #CD4D58;
 $yellow: #CDC638;
 $black: #333332;
+$white: rgba(255,255,255,1.0);
 $title-font: "brandon-grotesque", sans-serif;
 
 @mixin block-rel {
@@ -185,24 +186,27 @@ $title-font: "brandon-grotesque", sans-serif;
 }
 @mixin h3 {
     font-family: $title-font;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-    color: $black;
+    font-size: 1.5em;
+    font-weight: 300;
+	letter-spacing: 1px;
+    line-height: 1.2;
+    color: $white;
+	text-transform: uppercase;
 }
 @mixin h3-alt {
     font-family: "abril-display", sans-serif;
     font-size: 20px;
     font-weight: 100;
     line-height: 26px;
-    color: $black;
+    color: $white;
 }
 @mixin h4 {
     font-family: $title-font;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 100;
     line-height: 20px;
-    color: $black;
+    color: $white;
+	text-transform: uppercase;
 }
 @mixin p {
     font-family: "abril-display", sans-serif;
@@ -245,6 +249,9 @@ h3 {
 }
 .h3-alt {
     @include h3-alt;
+}
+h4 {
+	@include h4;
 }
 p {
     @include p;
@@ -291,7 +298,7 @@ main {
         padding: 10px 20px;
         width: 380px;
     }
-    
+
     h1 {
         @include block-ab;
         @include trans-three;
@@ -395,15 +402,16 @@ main {
     @include block-ab;
     @include trans-two;
     top: 60px; right: 0;
-    background: white;
-    min-width: 200px;
+    background: rgba(0,0,0,0.7);
+    min-width: 250px;
     padding: 16px;
     z-index: 100;
     .bkgd-title {
         line-height: 1.5;
     }
     date {
-        color: #646464;
+        color: #cecece;
+		line-height: 1.5;
     }
     .right-tog {
         @include block-ab;
@@ -416,8 +424,8 @@ main {
         }
         &:hover p {
             right: 0px;
-        } 
-        
+        }
+
         .right-tog-plus {
             @include block-ab;
             @include trans-one;
@@ -440,7 +448,7 @@ main {
                 top: 18px; right: 7px;
                 width: 26px; height: 4px;
                 background: #CD4D58;
-            }   
+            }
         }
         p {
             @include block-ab;
@@ -454,7 +462,7 @@ main {
     }
 }
 /*END MAIN PAGE*/
-    
+
 /*RIGHT*/
 .right {
     @include block-ab;
@@ -465,12 +473,12 @@ main {
     z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
-    
+
     #content-cont {
         @include block-rel;
         width: 90%;
         margin: 80px auto auto;
-        
+
         h2 {
             color: #CD4D58;
         }
@@ -480,7 +488,7 @@ main {
         .foot {
             @include block-rel;
             height: 160px;
-            
+
             .click-thru {
                 @include inline-rel;
                 @incldue trans-one;
@@ -544,8 +552,8 @@ main {
 .left {
     @include block-ab;
     /*@include trans-two;*/
-    top: 0; bottom: 0; left: -600px;
-    width: 33%;
+    top: 0; bottom: 0; left: -100%;
+    width: 50%;
     overflow-y: auto;
     background: white;
     z-index: 100;
@@ -562,12 +570,11 @@ main {
             @include inline-rel;
             width: 100%;
         }
-        
+
         li {
             @include inline-rel;
             @include trans-one;
-            width: 49%; height: 200px;
-            background-image: url('images/images/gug3.jpg');
+            width: 32%; height: 200px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -582,11 +589,11 @@ main {
             &:hover img {
                 @include fullcolor;
             }
-            
+
             img {
                 @include grayscale;
             }
-            
+
             a {
                 content:'';
                 @include block-ab;
@@ -597,14 +604,14 @@ main {
                 background-position: center;
                 background-repeat: no-repeat;
             }
-            
+
             div {
                 @include block-ab;
                 @include trans-one;
                 top: 200px;
                 background: rgba(255,255,255,0.6);
                 width: 100%;
-                
+
                 h3 {
                     display: block;
                     position: relative;
@@ -624,8 +631,8 @@ main {
         }
     }
 }
-        
-    
+
+
 /*FOOTER*/
 footer {
     @include block-ab;
@@ -653,7 +660,7 @@ footer {
         @include inline-rel;
         width: 100%;
     }
-    
+
     .exlink {
         @include inline-rel;
         @include trans-one;
@@ -663,7 +670,7 @@ footer {
         padding: 10px;
         text-align: center;
     }
-    
+
     #one  {
         background-color: white;
         border: 2px solid #92B540;
@@ -707,18 +714,17 @@ footer {
     padding-left: 100px;
 }
 /*END FOOTER*/
-    
 
-    
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+

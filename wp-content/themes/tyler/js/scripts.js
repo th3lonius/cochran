@@ -52,7 +52,7 @@ $("body").on('click', '#content, .work-link', function(event) {
     var divpos = parseInt($('.left').css('left'));
 
     if (divpos == 0) {
-        $('.left').animate({left: -600}),
+        $('.left').animate({left: -1000}),
         $('#content').animate({left: 0}),
         $('#main-menu, #right-tog, .bkgd-desc').fadeIn(300);
     };

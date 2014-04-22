@@ -1,4 +1,4 @@
-/* 
+/*
 Theme Name: Tyler
 Theme URI: http://tylercochran.com
 Description: A custom Wordpress portfolio site for Tyler Cochran
@@ -119,7 +119,7 @@ body, #content {
   text-decoration: none; }
 
 /*GLOBAL*/
-/* line 234, sass/style.scss */
+/* line 238, sass/style.scss */
 h1 {
   font-family: "brandon-grotesque", sans-serif;
   font-size: 40px;
@@ -127,7 +127,7 @@ h1 {
   line-height: 40px;
   color: #333332; }
 
-/* line 237, sass/style.scss */
+/* line 241, sass/style.scss */
 h2 {
   font-family: "brandon-grotesque", sans-serif;
   font-size: 40px;
@@ -135,7 +135,7 @@ h2 {
   line-height: 40px;
   color: #333332; }
 
-/* line 240, sass/style.scss */
+/* line 244, sass/style.scss */
 .h2-alt {
   font-family: "abril-display", sans-serif;
   font-size: 26px;
@@ -143,23 +143,34 @@ h2 {
   line-height: 26px;
   color: #333332; }
 
-/* line 243, sass/style.scss */
+/* line 247, sass/style.scss */
 h3 {
   font-family: "brandon-grotesque", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
-  color: #333332; }
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: white;
+  text-transform: uppercase; }
 
-/* line 246, sass/style.scss */
+/* line 250, sass/style.scss */
 .h3-alt {
   font-family: "abril-display", sans-serif;
   font-size: 20px;
   font-weight: 100;
   line-height: 26px;
-  color: #333332; }
+  color: white; }
 
-/* line 249, sass/style.scss */
+/* line 253, sass/style.scss */
+h4 {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  color: white;
+  text-transform: uppercase; }
+
+/* line 256, sass/style.scss */
 p {
   font-family: "abril-display", sans-serif;
   font-size: 16px;
@@ -168,7 +179,7 @@ p {
   margin-bottom: 1em;
   color: #333332; }
 
-/* line 252, sass/style.scss */
+/* line 259, sass/style.scss */
 .p-alt {
   font-family: "brandon-grotesque", sans-serif;
   font-size: 16px;
@@ -176,18 +187,18 @@ p {
   line-height: 16px;
   color: #333332; }
 
-/* line 255, sass/style.scss */
+/* line 262, sass/style.scss */
 .uppercase {
   text-transform: uppercase; }
 
-/* line 258, sass/style.scss */
+/* line 265, sass/style.scss */
 section {
   display: block;
   position: relative;
   width: 100%;
   height: 100%; }
 
-/* line 263, sass/style.scss */
+/* line 270, sass/style.scss */
 figure {
   display: block;
   position: relative;
@@ -195,12 +206,12 @@ figure {
   height: 100%;
   overflow: hidden; }
 
-/* line 269, sass/style.scss */
+/* line 276, sass/style.scss */
 figcaption {
   display: block;
   position: relative; }
 
-/* line 272, sass/style.scss */
+/* line 279, sass/style.scss */
 main {
   display: block;
   position: relative;
@@ -209,7 +220,7 @@ main {
   z-index: 0; }
 
 /*MENU*/
-/* line 280, sass/style.scss */
+/* line 287, sass/style.scss */
 #main-menu {
   display: block;
   position: absolute;
@@ -218,7 +229,7 @@ main {
   width: 60px;
   height: 60px;
   z-index: 100; }
-  /* line 285, sass/style.scss */
+  /* line 292, sass/style.scss */
   #main-menu:hover #menu {
     transition: .1s all;
     -moz-transition: .1s all;
@@ -227,7 +238,7 @@ main {
     -moz-transition-delay: .1s;
     -webkit-transition-delay: .1s;
     left: 0px; }
-  /* line 289, sass/style.scss */
+  /* line 296, sass/style.scss */
   #main-menu:hover h1 {
     transition: .1s all;
     -moz-transition: .1s all;
@@ -237,7 +248,7 @@ main {
     -webkit-transition-delay: .1s;
     padding: 10px 20px;
     width: 380px; }
-  /* line 295, sass/style.scss */
+  /* line 302, sass/style.scss */
   #main-menu h1 {
     display: block;
     position: absolute;
@@ -256,7 +267,7 @@ main {
     background: #333332;
     text-transform: uppercase; }
 
-/* line 306, sass/style.scss */
+/* line 313, sass/style.scss */
 #main-logo {
   display: block;
   position: relative;
@@ -275,7 +286,7 @@ main {
   background-color: none;
   float: left; }
 
-/* line 317, sass/style.scss */
+/* line 324, sass/style.scss */
 #main-logo:hover {
   transition: .1s all;
   -moz-transition: .1s all;
@@ -285,7 +296,7 @@ main {
   -webkit-transition-delay: .1s;
   background-color: white; }
 
-/* line 321, sass/style.scss */
+/* line 328, sass/style.scss */
 #menu {
   display: block;
   position: absolute;
@@ -302,7 +313,7 @@ main {
   background: #333332;
   float: left;
   z-index: 1; }
-  /* line 330, sass/style.scss */
+  /* line 337, sass/style.scss */
   #menu li {
     display: block;
     position: relative;
@@ -310,55 +321,55 @@ main {
     height: 60px;
     background: none;
     text-indent: -9999px; }
-  /* line 339, sass/style.scss */
+  /* line 346, sass/style.scss */
   #menu a {
     display: block;
     height: 100%; }
-  /* line 343, sass/style.scss */
+  /* line 350, sass/style.scss */
   #menu .home {
     background-image: url("images/icons/home.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
-    /* line 348, sass/style.scss */
+    /* line 355, sass/style.scss */
     #menu .home:hover {
       background-color: #92B540; }
-  /* line 352, sass/style.scss */
+  /* line 359, sass/style.scss */
   #menu .about-link {
     background-image: url("images/icons/about.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center; }
-    /* line 357, sass/style.scss */
+    /* line 364, sass/style.scss */
     #menu .about-link:hover {
       background-color: #009BA6; }
-  /* line 361, sass/style.scss */
+  /* line 368, sass/style.scss */
   #menu .work {
     background-image: url("images/icons/work.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
-    /* line 367, sass/style.scss */
+    /* line 374, sass/style.scss */
     #menu .work:hover {
       background-color: #CD4D58; }
-  /* line 371, sass/style.scss */
+  /* line 378, sass/style.scss */
   #menu .links {
     background-image: url("images/icons/links.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer; }
-    /* line 377, sass/style.scss */
+    /* line 384, sass/style.scss */
     #menu .links:hover {
       background-color: #CDC638; }
 
 /*MAIN PAGE*/
-/* line 384, sass/style.scss */
+/* line 391, sass/style.scss */
 #main {
   /*@include trans-two;*/ }
 
-/* line 387, sass/style.scss */
+/* line 394, sass/style.scss */
 .img-bkgd {
   display: block;
   position: relative;
@@ -367,7 +378,7 @@ main {
   height: auto;
   min-height: 100%; }
 
-/* line 394, sass/style.scss */
+/* line 401, sass/style.scss */
 .bkgd-desc {
   display: block;
   position: absolute;
@@ -379,17 +390,18 @@ main {
   -webkit-transition-delay: .1s;
   top: 60px;
   right: 0;
-  background: white;
-  min-width: 200px;
+  background: rgba(0, 0, 0, 0.7);
+  min-width: 250px;
   padding: 16px;
   z-index: 100; }
-  /* line 402, sass/style.scss */
+  /* line 409, sass/style.scss */
   .bkgd-desc .bkgd-title {
     line-height: 1.5; }
-  /* line 405, sass/style.scss */
+  /* line 412, sass/style.scss */
   .bkgd-desc date {
-    color: #646464; }
-  /* line 408, sass/style.scss */
+    color: #cecece;
+    line-height: 1.5; }
+  /* line 416, sass/style.scss */
   .bkgd-desc .right-tog {
     display: block;
     position: absolute;
@@ -404,13 +416,13 @@ main {
     width: 40px;
     height: 40px;
     cursor: pointer; }
-    /* line 414, sass/style.scss */
+    /* line 422, sass/style.scss */
     .bkgd-desc .right-tog:hover .right-tog-plus {
       right: 60px; }
-    /* line 417, sass/style.scss */
+    /* line 425, sass/style.scss */
     .bkgd-desc .right-tog:hover p {
       right: 0px; }
-    /* line 421, sass/style.scss */
+    /* line 429, sass/style.scss */
     .bkgd-desc .right-tog .right-tog-plus {
       display: block;
       position: absolute;
@@ -425,10 +437,10 @@ main {
       width: 40px;
       height: 40px;
       background: white; }
-      /* line 427, sass/style.scss */
+      /* line 435, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus:hover {
         right: 60px; }
-      /* line 430, sass/style.scss */
+      /* line 438, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus::before {
         content: '';
         display: block;
@@ -438,7 +450,7 @@ main {
         width: 4px;
         height: 26px;
         background: #CD4D58; }
-      /* line 437, sass/style.scss */
+      /* line 445, sass/style.scss */
       .bkgd-desc .right-tog .right-tog-plus::after {
         content: '';
         display: block;
@@ -448,7 +460,7 @@ main {
         width: 26px;
         height: 4px;
         background: #CD4D58; }
-    /* line 445, sass/style.scss */
+    /* line 453, sass/style.scss */
     .bkgd-desc .right-tog p {
       display: block;
       position: absolute;
@@ -468,7 +480,7 @@ main {
 
 /*END MAIN PAGE*/
 /*RIGHT*/
-/* line 459, sass/style.scss */
+/* line 467, sass/style.scss */
 .right {
   display: block;
   position: absolute;
@@ -481,98 +493,100 @@ main {
   z-index: 999;
   overflow-x: hidden;
   overflow-y: auto; }
-  /* line 469, sass/style.scss */
+  /* line 477, sass/style.scss */
   .right #content-cont {
     display: block;
     position: relative;
     width: 90%;
     margin: 80px auto auto; }
-    /* line 474, sass/style.scss */
+    /* line 482, sass/style.scss */
     .right #content-cont h2 {
       color: #CD4D58; }
-    /* line 477, sass/style.scss */
+    /* line 485, sass/style.scss */
     .right #content-cont p {
       line-height: 1.7; }
-    /* line 480, sass/style.scss */
+    /* line 488, sass/style.scss */
     .right #content-cont .foot {
       display: block;
       position: relative;
       height: 160px; }
-      /* line 484, sass/style.scss */
+      /* line 492, sass/style.scss */
       .right #content-cont .foot .click-thru {
         display: inline-block;
         position: relative;
         @incldue trans-one;
         font-family: "brandon-grotesque", sans-serif;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 20px;
-        color: #333332;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        color: white;
+        text-transform: uppercase;
         font-size: 16px;
         padding: 10px;
         vertical-align: bottom;
         margin: 100px 0 0 0; }
-      /* line 493, sass/style.scss */
+      /* line 501, sass/style.scss */
       .right #content-cont .foot #work-thru {
         @incldue trans-one;
         float: left;
         color: #CD4D58; }
-        /* line 497, sass/style.scss */
+        /* line 505, sass/style.scss */
         .right #content-cont .foot #work-thru:hover {
           background: #CD4D58;
           color: white; }
-      /* line 502, sass/style.scss */
+      /* line 510, sass/style.scss */
       .right #content-cont .foot #about-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 506, sass/style.scss */
+        /* line 514, sass/style.scss */
         .right #content-cont .foot #about-thru:hover {
           background: #009BA6;
           color: white; }
-      /* line 511, sass/style.scss */
+      /* line 519, sass/style.scss */
       .right #content-cont .foot .links-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 515, sass/style.scss */
+        /* line 523, sass/style.scss */
         .right #content-cont .foot .links-thru:hover {
           background: #009BA6;
           color: white; }
-      /* line 520, sass/style.scss */
+      /* line 528, sass/style.scss */
       .right #content-cont .foot #prev-thru {
         @incldue trans-one;
         float: left;
         color: #CD4D58; }
-        /* line 524, sass/style.scss */
+        /* line 532, sass/style.scss */
         .right #content-cont .foot #prev-thru:hover {
           background: #CD4D58;
           color: white; }
-      /* line 529, sass/style.scss */
+      /* line 537, sass/style.scss */
       .right #content-cont .foot #next-thru {
         @incldue trans-one;
         float: right;
         color: #009BA6; }
-        /* line 533, sass/style.scss */
+        /* line 541, sass/style.scss */
         .right #content-cont .foot #next-thru:hover {
           background: #009BA6;
           color: white; }
 
 /*END RIGHT*/
 /*LEFT SECTION*/
-/* line 544, sass/style.scss */
+/* line 552, sass/style.scss */
 .left {
   display: block;
   position: absolute;
   /*@include trans-two;*/
   top: 0;
   bottom: 0;
-  left: -600px;
-  width: 33%;
+  left: -100%;
+  width: 50%;
   overflow-y: auto;
   background: white;
   z-index: 100; }
-  /* line 553, sass/style.scss */
+  /* line 561, sass/style.scss */
   .left .work-grid {
     display: block;
     position: relative;
@@ -581,13 +595,13 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify; }
-    /* line 560, sass/style.scss */
+    /* line 568, sass/style.scss */
     .left .work-grid::after {
       content: '';
       display: inline-block;
       position: relative;
       width: 100%; }
-    /* line 566, sass/style.scss */
+    /* line 574, sass/style.scss */
     .left .work-grid li {
       display: inline-block;
       position: relative;
@@ -597,17 +611,16 @@ main {
       transition-delay: .1s;
       -moz-transition-delay: .1s;
       -webkit-transition-delay: .1s;
-      width: 49%;
+      width: 32%;
       height: 200px;
-      background-image: url("images/images/gug3.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden; }
-      /* line 575, sass/style.scss */
+      /* line 582, sass/style.scss */
       .left .work-grid li:hover div {
         top: 102px; }
-      /* line 578, sass/style.scss */
+      /* line 585, sass/style.scss */
       .left .work-grid li:hover a {
         transition: .1s all;
         -moz-transition: .1s all;
@@ -616,18 +629,18 @@ main {
         -moz-transition-delay: .1s;
         -webkit-transition-delay: .1s;
         top: 0; }
-      /* line 582, sass/style.scss */
+      /* line 589, sass/style.scss */
       .left .work-grid li:hover img {
         ilter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
         -webkit-filter: grayscale(0%); }
-      /* line 586, sass/style.scss */
+      /* line 593, sass/style.scss */
       .left .work-grid li img {
         -webkit-filter: grayscale(100%);
         filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
         /* Firefox 10+, Firefox on Android */
         filter: gray;
         /* IE6-9 */ }
-      /* line 590, sass/style.scss */
+      /* line 597, sass/style.scss */
       .left .work-grid li a {
         content: '';
         display: block;
@@ -639,7 +652,7 @@ main {
         background-size: 25px;
         background-position: center;
         background-repeat: no-repeat; }
-      /* line 601, sass/style.scss */
+      /* line 608, sass/style.scss */
       .left .work-grid li div {
         display: block;
         position: absolute;
@@ -652,7 +665,7 @@ main {
         top: 200px;
         background: rgba(255, 255, 255, 0.6);
         width: 100%; }
-        /* line 608, sass/style.scss */
+        /* line 615, sass/style.scss */
         .left .work-grid li div h3 {
           display: block;
           position: relative;
@@ -660,7 +673,7 @@ main {
           padding: 10px 10px 5px;
           background: rgba(0, 0, 0, 0.7);
           color: white; }
-        /* line 616, sass/style.scss */
+        /* line 623, sass/style.scss */
         .left .work-grid li div p {
           display: block;
           position: relative;
@@ -669,7 +682,7 @@ main {
           padding: 24px 10px; }
 
 /*FOOTER*/
-/* line 630, sass/style.scss */
+/* line 637, sass/style.scss */
 footer {
   display: block;
   position: absolute;
@@ -680,7 +693,7 @@ footer {
   height: 200px;
   background: white; }
 
-/* line 638, sass/style.scss */
+/* line 645, sass/style.scss */
 #exlinks-title {
   display: block;
   position: relative;
@@ -688,7 +701,7 @@ footer {
   margin: 30px auto 20px;
   padding-left: 100px; }
 
-/* line 645, sass/style.scss */
+/* line 652, sass/style.scss */
 #exlinks-cont {
   display: block;
   position: relative;
@@ -696,13 +709,13 @@ footer {
   text-align: justify;
   margin: 20px auto 0;
   padding: 0 100px 0 100px; }
-  /* line 651, sass/style.scss */
+  /* line 658, sass/style.scss */
   #exlinks-cont::after {
     content: '';
     display: inline-block;
     position: relative;
     width: 100%; }
-  /* line 657, sass/style.scss */
+  /* line 664, sass/style.scss */
   #exlinks-cont .exlink {
     display: inline-block;
     position: relative;
@@ -713,48 +726,50 @@ footer {
     -moz-transition-delay: .1s;
     -webkit-transition-delay: .1s;
     font-family: "brandon-grotesque", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-    color: #333332;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: white;
+    text-transform: uppercase;
     width: 20%;
     font-size: 16px;
     padding: 10px;
     text-align: center; }
-  /* line 667, sass/style.scss */
+  /* line 674, sass/style.scss */
   #exlinks-cont #one {
     background-color: white;
     border: 2px solid #92B540; }
-    /* line 670, sass/style.scss */
+    /* line 677, sass/style.scss */
     #exlinks-cont #one:hover {
       background-color: #92B540;
       color: white; }
-  /* line 675, sass/style.scss */
+  /* line 682, sass/style.scss */
   #exlinks-cont #two {
     background-color: white;
     border: 2px solid #009BA6; }
-    /* line 678, sass/style.scss */
+    /* line 685, sass/style.scss */
     #exlinks-cont #two:hover {
       background-color: #009BA6;
       color: white; }
-  /* line 683, sass/style.scss */
+  /* line 690, sass/style.scss */
   #exlinks-cont #three {
     background-color: white;
     border: 2px solid #CD4D58; }
-    /* line 686, sass/style.scss */
+    /* line 693, sass/style.scss */
     #exlinks-cont #three:hover {
       background-color: #CD4D58;
       color: white; }
-  /* line 691, sass/style.scss */
+  /* line 698, sass/style.scss */
   #exlinks-cont #four {
     background-color: white;
     border: 2px solid #CDC638; }
-    /* line 694, sass/style.scss */
+    /* line 701, sass/style.scss */
     #exlinks-cont #four:hover {
       background-color: #CDC638;
       color: white; }
 
-/* line 701, sass/style.scss */
+/* line 708, sass/style.scss */
 #colophon {
   display: block;
   position: relative;
