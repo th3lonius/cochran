@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-    <section id="main">
-		<main id="content" role="main">
+<span style="font-size: 26px; color: red; float: right;">I am page</span>
+
+    <section id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -25,11 +26,6 @@
                     <p class="p-alt">Learn More</p>
                 </div>
             </figcaption>
-            <article class="right">
-                <div id="content-cont">
-                    <?php the_field( 'description' ); ?>
-                </div>
-            </article>
 
 			<?php endwhile; ?>
 
@@ -41,8 +37,11 @@
 
 		<?php endif; ?>
 
-		</main><!-- #content -->
-	</section><!-- #main -->
+	</section><!-- #content -->
+
+    <?php get_template_part( 'left', 'none' ); ?>
+
+	<?php get_template_part( 'right', 'none' ); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

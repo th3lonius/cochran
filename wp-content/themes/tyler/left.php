@@ -1,8 +1,4 @@
-<?php
-
-/* Template Name: Work List Section */
-
-get_header(); ?>
+<?php /* Template Name: Work List Section */ ?>
 
 <?php
 
@@ -13,6 +9,8 @@ get_header(); ?>
     $work_query = new WP_Query( $args );
 
 ?>
+
+<span style="font-size: 26px; color: red; float: right;">I am left</span>
 
 <section class="left">
 
@@ -49,7 +47,5 @@ get_header(); ?>
     </ul>
 
 <?php endif; ?>
-
-<?php wp_reset_postdata(); ?>
 
 </section>

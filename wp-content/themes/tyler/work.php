@@ -14,19 +14,18 @@ get_header(); ?>
 
 ?>
 
-    <section id="main">
-		<main id="viewport" role="main">
+<span style="font-size: 26px; color: red; float: right;">I am work</span>
 
-		<?php if ( have_posts() ) : ?>
+    <section id="content" role="main">
 
-			<?php /* Start the Loop */ ?>
+		<?php if ( $the_query->have_posts() ) : ?>
+
 			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             
-                <?php get_template_part( 'content', 'none' ); ?>
+                
 
 			<?php endwhile; endif; ?>
 
-		</main><!-- #viewport -->
-	</section><!-- #main -->
+	</section><!-- #content -->
 
 <?php get_footer(); ?>

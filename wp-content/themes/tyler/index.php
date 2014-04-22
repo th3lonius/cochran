@@ -13,6 +13,8 @@
 
 get_header(); ?>
 
+<span style="font-size: 26px; color: red; float: right;">I am index</span>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

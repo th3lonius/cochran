@@ -84,7 +84,8 @@ body, #content {
 
 * {
   box-sizing: border-box;
-  -mox-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   text-decoration: none; }
 
 /*GLOBAL*/
@@ -476,7 +477,7 @@ main {
   top: 0;
   bottom: 0;
   left: -600px;
-  width: 600px;
+  width: 33%;
   overflow-y: auto;
   background: white;
   z-index: 100; }
@@ -502,9 +503,8 @@ main {
       transition-delay: 0.1s;
       -moz-transition-delay: 0.1s;
       -webkit-transition-delay: 0.1s;
-      width: 46%;
+      width: 49%;
       height: 200px;
-      margin: 1%;
       background-image: url('images/images/gug3.jpg');
       background-size: cover;
       background-position: center;
@@ -541,14 +541,14 @@ main {
         -moz-transition-delay: 0.1s;
         -webkit-transition-delay: 0.1s;
         top: 200px;
-        background: white;
-        width: 260px; }
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%; }
         .left .work-grid li div h3 {
           display: block;
           position: relative;
           width: 100%;
           padding: 10px 10px 5px;
-          background: #CD4D58;
+          background: rgba(0, 0, 0, 0.7);
           color: white; }
         .left .work-grid li div p {
           display: block;
@@ -556,26 +556,6 @@ main {
           width: 100%;
           font-size: 16px;
           padding: 24px 10px; }
-    .left .work-grid #work-one {
-      background-image: url('images/images/thumbs/gug1.jpg'); }
-    .left .work-grid #work-two {
-      background-image: url('images/images/thumbs/walt1.jpg'); }
-    .left .work-grid #work-three {
-      background-image: url('images/images/thumbs/brain.jpg'); }
-    .left .work-grid #work-four {
-      background-image: url('images/images/thumbs/weisman.jpg'); }
-    .left .work-grid #work-five {
-      background-image: url('images/images/thumbs/dancing.jpg'); }
-    .left .work-grid #work-six {
-      background-image: url('images/images/thumbs/dus.jpg'); }
-    .left .work-grid #work-seven {
-      background-image: url('images/images/thumbs/music.jpg'); }
-    .left .work-grid #work-eight {
-      background-image: url('images/images/thumbs/stata.jpg'); }
-    .left .work-grid #work-nine {
-      background-image: url('images/images/thumbs/spruce.jpg'); }
-    .left .work-grid #work-ten {
-      background-image: url('images/images/thumbs/jay.jpg'); }
 
 /*FOOTER*/
 footer {

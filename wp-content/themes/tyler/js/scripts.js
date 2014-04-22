@@ -48,7 +48,7 @@ $("body").on('click', '.work', function(event) {
     $('#main-menu, #right-tog, .bkgd-desc').fadeOut(300);
 });
 
-$("body").on('click', '#content', function(event) {
+$("body").on('click', '#content, .work-link', function(event) {
     var divpos = parseInt($('.left').css('left'));
 
     if (divpos == 0) {
