@@ -105,6 +105,7 @@ input, select {
 }
 body, html {
     height: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 body, #content {
     overflow: hidden;
@@ -125,7 +126,8 @@ $red: #CD4D58;
 $yellow: #CDC638;
 $black: #333332;
 $white: rgba(255,255,255,1.0);
-$title-font: "brandon-grotesque", sans-serif;
+$title-font: "prenton-ultra-condensed", sans-serif;
+$display-font: "prenton-display", sans-serif;
 
 @mixin block-rel {
     display: block;
@@ -166,7 +168,8 @@ $title-font: "brandon-grotesque", sans-serif;
 @mixin h1 {
     font-family: $title-font;
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 500;
+	letter-spacing: 1px;
     line-height: 40px;
     color: $black;
 }
@@ -178,7 +181,7 @@ $title-font: "brandon-grotesque", sans-serif;
     color: $black;
 }
 @mixin h2-alt {
-    font-family: "abril-display", sans-serif;
+    font-family: $display-font;
     font-size: 26px;
     font-weight: 100;
     line-height: 26px;
@@ -186,15 +189,15 @@ $title-font: "brandon-grotesque", sans-serif;
 }
 @mixin h3 {
     font-family: $title-font;
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 2em;
+    font-weight: 100;
 	letter-spacing: 1px;
     line-height: 1.2;
     color: $white;
 	text-transform: uppercase;
 }
 @mixin h3-alt {
-    font-family: "abril-display", sans-serif;
+    font-family: $display-font;
     font-size: 20px;
     font-weight: 100;
     line-height: 26px;
@@ -209,7 +212,7 @@ $title-font: "brandon-grotesque", sans-serif;
 	text-transform: uppercase;
 }
 @mixin p {
-    font-family: "abril-display", sans-serif;
+    font-family: $display-font;
     font-size: 16px;
     font-weight: 100;
     line-height: 1.4;
@@ -296,7 +299,7 @@ main {
     &:hover h1 {
         @include trans-one;
         padding: 10px 20px;
-        width: 380px;
+        width: 250px;
     }
 
     h1 {
