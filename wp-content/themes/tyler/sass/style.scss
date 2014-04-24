@@ -125,6 +125,7 @@ $blue: #009BA6;
 $red: #CD4D58;
 $yellow: #CDC638;
 $black: #333332;
+$blackbg: rgba(0,0,0,0.7);
 $white: rgba(255,255,255,1.0);
 $title-font: "prenton-ultra-condensed", sans-serif;
 $display-font: "prenton-display", sans-serif;
@@ -188,6 +189,7 @@ $display-font: "prenton-display", sans-serif;
     color: $black;
 }
 @mixin h3 {
+	display: inline-block;
     font-family: $title-font;
     font-size: 2em;
     font-weight: 100;
@@ -204,7 +206,7 @@ $display-font: "prenton-display", sans-serif;
     color: $white;
 }
 @mixin h4 {
-    font-family: $title-font;
+    font-family: $display-font;
     font-size: 14px;
     font-weight: 100;
     line-height: 20px;
@@ -294,23 +296,21 @@ main {
     z-index: 100;
     &:hover #menu {
         @include trans-one;
-        left: 0px;
+        top: 60px;
     }
-    &:hover h1 {
-        @include trans-one;
-        padding: 10px 20px;
-        width: 250px;
-    }
+
 
     h1 {
         @include block-ab;
         @include trans-three;
         top: 0; left: 60px;
-        height: 60px; width: 0;
+        height: 60px; width: 200px;
         color: white;
         overflow: hidden;
-        background: $black;
+        background: $blackbg;
+		padding-left: 10px;
         text-transform: uppercase;
+		line-height: 60px;
     }
 }
 #main-logo {
@@ -323,6 +323,7 @@ main {
     background-position: left;
     background-color: none;
     float: left;
+	z-index: 9999999;
 }
 #main-logo:hover {
     @include trans-one;
@@ -331,10 +332,10 @@ main {
 #menu {
     @include block-ab;
     @include trans-three;
-    top: 60px; left: -60px;
+    top: -1000px; left: 0;
     width: 60;
     overflow: hidden;
-    background: #333332;
+    background: $blackbg;
     float: left;
     z-index: 1;
     li {
@@ -405,16 +406,12 @@ main {
     @include block-ab;
     @include trans-two;
     top: 60px; right: 0;
-    background: rgba(0,0,0,0.7);
+    background: $blackbg;
     min-width: 250px;
     padding: 16px;
     z-index: 100;
     .bkgd-title {
         line-height: 1.5;
-    }
-    date {
-        color: #cecece;
-		line-height: 1.5;
     }
     .right-tog {
         @include block-ab;
@@ -463,6 +460,12 @@ main {
             color: white;
         }
     }
+}
+date {
+	@include h4;
+	color: #cecece;
+	line-height: 1.5;
+	padding-left: 0.5em;
 }
 /*END MAIN PAGE*/
 
@@ -612,22 +615,19 @@ main {
                 @include block-ab;
                 @include trans-one;
                 top: 200px;
-                background: rgba(255,255,255,0.6);
+                background: $blackbg;
                 width: 100%;
-
                 h3 {
-                    display: block;
+                    display: inline-block;
                     position: relative;
-                    width: 100%;
-                    padding: 10px 10px 5px;
-                    background: rgba(0,0,0,0.7);
+                    padding: 10px;
                     color: white;
                 }
                 p {
                     display: block;
                     position: relative;
                     width: 100%;
-                    font-size: 16px;
+                    font-size: 1em;
                     padding: 24px 10px;
                 }
             }

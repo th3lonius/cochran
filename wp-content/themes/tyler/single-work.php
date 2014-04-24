@@ -8,13 +8,17 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
+		<div id="slides">
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
             <!-- Slider -->
             <?php if(get_field('images')): ?>
 
-            <ul class="bxslider">
+            <ul class="slides-container">
+
                 <?php while(the_repeater_field('images')): ?>
+
                 <li>
                     <?php $image = wp_get_attachment_image_src(get_sub_field('image'), 'full'); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
@@ -30,6 +34,7 @@ get_header(); ?>
                 </li>
 
                 <?php endwhile; ?>
+
             </ul>
 
             <?php endif; ?>
@@ -41,6 +46,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+
+		</div>
 
 	</section><!-- #content -->
 

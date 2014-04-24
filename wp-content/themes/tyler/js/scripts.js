@@ -1,13 +1,13 @@
 jQuery(document).ready(function($){
 
-  $('.bxslider').bxSlider({
-      auto: true,
-      speed: 1800,
-      mode: 'fade'
-  });
-
+$('#slides').superslides({
+    play: 6000,
+	animation: 'fade',
+	animation_speed: 'fast'
+});
 
 $(".links a, .work a").removeAttr("href").addClass('no-ajaxy');
+$(".slides-navigation a").addClass('no-ajaxy');
 
 /*RIGHT ANIMATIONS*/
 $("body").on('click', '.right-tog', function(event) {

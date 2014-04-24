@@ -36,7 +36,7 @@
             <a class="work-link" href="<?php the_permalink(); ?>"></a>
             <div>
                 <h3><?php the_title() ;?></h3>
-                <p><?php the_field( 'date' ); ?></p>
+                <date><?php the_field( 'date' ); ?></date>
             </div>
         </li>
 

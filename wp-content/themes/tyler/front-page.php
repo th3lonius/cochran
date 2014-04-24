@@ -10,7 +10,7 @@
         </div>
     </figcaption>
 
-
+	<div id="slides">
     <!-- Home page slider of portfolio work -->
     <?php
 
@@ -24,30 +24,36 @@
     ?>
     <?php if ( have_posts() ) : ?>
 
-    <ul class="bxslider">
+		<ul class="slides-container">
 
-        <?php while ( $slideshow_query->have_posts() ) : $slideshow_query->the_post(); ?>
+			<?php while ( $slideshow_query->have_posts() ) : $slideshow_query->the_post(); ?>
 
-        <?php if( have_rows('images') ) :
+			<?php if( have_rows('images') ) :
 
-            $rows = get_field('images'); // get all the rows
-            $first_row = $rows[0]; // get the first row
-            $first_row_image = $first_row['image' ]; // get the sub field value
-            $image = wp_get_attachment_image_src( $first_row_image, 'full' );
+				$rows = get_field('images'); // get all the rows
+				$first_row = $rows[0]; // get the first row
+				$first_row_image = $first_row['image' ]; // get the sub field value
+				$image = wp_get_attachment_image_src( $first_row_image, 'full' );
 
-        ?>
+			?>
 
-        <li>
-            <img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
-        </li>
+			<li>
+				<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
+			</li>
+
+			<?php endif; ?>
+
+			<?php endwhile; ?>
+
+		</ul><!-- .slides-container -->
+		<nav class="slides-navigation">
+			<a href="#" class="next">Next</a>
+			<a href="#" class="prev">Previous</a>
+		</nav>
 
         <?php endif; ?>
 
-        <?php endwhile; ?>
-
-    </ul>
-
-        <?php endif; ?>
+	</div><!-- #slides -->
 
 </section><!-- #content -->
 
