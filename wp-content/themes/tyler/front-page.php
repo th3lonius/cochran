@@ -2,12 +2,7 @@
 
 <section id="content" role="main">
     <figcaption class="bkgd-desc">
-        <h3 class="bkgd-title"><?php echo $bloginfo = get_bloginfo( name ); ?></h3>
-        <p id="bkgd-sub"><?php the_field( 'date' ); ?></p>
-        <div class="right-tog">
-            <div class="right-tog-plus"></div>
-            <p class="p-alt">Learn More</p>
-        </div>
+        <h3 class="bkgd-title">Recent Work</h3>
     </figcaption>
 
 	<div id="slides">
@@ -47,8 +42,8 @@
 
 		</ul><!-- .slides-container -->
 		<nav class="slides-navigation">
-			<a href="#" class="next">Next</a>
-			<a href="#" class="prev">Previous</a>
+			<a href="#" class="next"></a>
+			<a href="#" class="prev"></a>
 		</nav>
 
         <?php endif; ?>
@@ -58,8 +53,5 @@
 </section><!-- #content -->
 
     <?php get_template_part( 'left', 'none' ); ?>
-
-	<?php get_template_part( 'right', 'none' ); ?>
-
 
 <?php get_footer(); ?>

@@ -24,7 +24,7 @@ get_header(); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
                     <figcaption class="bkgd-desc">
                         <h3 class="bkgd-title"><?php the_title() ;?></h3>
-                        <date><?php the_field( 'date' ); ?></date>
+                        <date><?php the_field( 'year' ); ?></date>
 						<h4 class="image-title"><?php echo the_sub_field('title');?></h4>
                         <div class="right-tog">
                             <div class="right-tog-plus"></div>
@@ -35,7 +35,12 @@ get_header(); ?>
 
                 <?php endwhile; ?>
 
-            </ul>
+            </ul><!-- .slides-container -->
+            
+            <nav class="slides-navigation">
+                <a href="#" class="next"></a>
+                <a href="#" class="prev"></a>
+            </nav>
 
             <?php endif; ?>
 
@@ -47,7 +52,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</div>
+		</div><!-- #slides -->
 
 	</section><!-- #content -->
 

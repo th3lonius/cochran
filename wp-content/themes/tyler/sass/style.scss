@@ -105,7 +105,7 @@ input, select {
 }
 body, html {
     height: 100%;
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased!important;
 }
 body, #content {
     overflow: hidden;
@@ -207,7 +207,7 @@ $display-font: "prenton-display", sans-serif;
 }
 @mixin h4 {
     font-family: $display-font;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 100;
     line-height: 20px;
     color: $white;
@@ -236,8 +236,14 @@ $display-font: "prenton-display", sans-serif;
 }
 
 @mixin fullcolor {
-    ilter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%);
+}
+
+@mixin boxshadow {
+    -webkit-box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.4);
 }
 
 h1 {
@@ -299,18 +305,21 @@ main {
         top: 60px;
     }
 
-
     h1 {
         @include block-ab;
         @include trans-three;
         top: 0; left: 60px;
-        height: 60px; width: 200px;
+        height: 60px; width: 240px;
         color: white;
         overflow: hidden;
         background: $blackbg;
 		padding-left: 10px;
         text-transform: uppercase;
 		line-height: 60px;
+        span {
+            font-size: 0.5em;
+            padding-left: 0.2em;
+        }
     }
 }
 #main-logo {
@@ -416,7 +425,7 @@ main {
     .right-tog {
         @include block-ab;
         @include trans-one;
-        top: 90px; right: 0;
+        bottom: -60px; right: 0;
         width: 40px; height: 40px;
         cursor: pointer;
         &:hover .right-tog-plus {
@@ -431,7 +440,7 @@ main {
             @include trans-one;
             top: 0px; right: 0;
             width: 40px; height: 40px;
-            background: white;
+            background: $blackbg;
             &:hover {
                 right: 60px;
             }
@@ -440,14 +449,14 @@ main {
                 @include block-ab;
                 top: 7px; right: 18px;
                 width: 4px; height: 26px;
-                background: #CD4D58;
+                background: $white;
             }
             &::after {
                 content:'';
                 @include block-ab;
                 top: 18px; right: 7px;
                 width: 26px; height: 4px;
-                background: #CD4D58;
+                background: $white;
             }
         }
         p {
@@ -458,6 +467,8 @@ main {
             padding: 12px 0 0 12px;
             background: #CD4D58;
             color: white;
+            font-family: $display-font;
+            font-size: 1em!important;
         }
     }
 }
@@ -465,7 +476,7 @@ date {
 	@include h4;
 	color: #cecece;
 	line-height: 1.5;
-	padding-left: 0.5em;
+	padding-left: 0.25em;
 }
 /*END MAIN PAGE*/
 
@@ -475,7 +486,7 @@ date {
     /*@include trans-two;*/
     top: 0; bottom: 0; right: -550px;
     width: 550px;
-    background: white;
+    background: #303030;
     z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
@@ -488,7 +499,11 @@ date {
         h2 {
             color: #CD4D58;
         }
+        h3 {
+            font-size: 3em;
+        }
         p {
+            color: $white;
             line-height: 1.7;
         }
         .foot {
@@ -557,11 +572,12 @@ date {
 /*LEFT SECTION*/
 .left {
     @include block-ab;
+    @include boxshadow;
     /*@include trans-two;*/
     top: 0; bottom: 0; left: -100%;
     width: 50%;
     overflow-y: auto;
-    background: white;
+    background: $white;
     z-index: 100;
 
     .work-grid {
@@ -642,7 +658,8 @@ footer {
     /*@include trans-two;*/
     left: 0; right: 0; bottom: -200px;
     height: 200px;
-    background: white;
+    background: $white;
+    z-index: 99999;
 }
 
 #exlinks-title {

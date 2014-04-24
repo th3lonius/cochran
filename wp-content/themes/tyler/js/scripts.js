@@ -1,9 +1,10 @@
 jQuery(document).ready(function($){
 
 $('#slides').superslides({
-    play: 6000,
+    play: 8000,
 	animation: 'fade',
-	animation_speed: 'fast'
+	animation_speed: 'normal',
+    pagination: false
 });
 
 $(".links a, .work a").removeAttr("href").addClass('no-ajaxy');

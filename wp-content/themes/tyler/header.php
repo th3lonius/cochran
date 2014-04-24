@@ -24,7 +24,7 @@
 
 	<header role="banner">
         <nav id="main-menu">
-            <div id="main-logo"><h1><?php bloginfo( 'name' ); ?></h1></div>
+            <div id="main-logo"><h1><?php bloginfo( 'name' ); ?><span>A Portfolio</span></h1></div>
             <?php
 
                 $args = array(
