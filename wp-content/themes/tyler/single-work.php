@@ -4,6 +4,8 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'events', 'none' ); ?>
+
     <section id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>

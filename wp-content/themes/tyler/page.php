@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<span style="font-size: 26px; color: red; float: right;">I am page</span>
+<?php get_template_part( 'events', 'none' ); ?>
 
     <section id="content" role="main">
 

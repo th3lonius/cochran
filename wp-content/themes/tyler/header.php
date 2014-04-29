@@ -22,20 +22,20 @@
 
 <body <?php body_class(); ?>>
 
-	<header role="banner">
-        <nav id="main-menu">
-            <div id="main-logo"><h1><?php bloginfo( 'name' ); ?><span>A Portfolio</span></h1></div>
-            <?php
-
-                $args = array(
-                    'menu' => 'main-menu',
-                    'container' => false,
-                    'menu_class' => false,
-                    'menu_id' => 'menu'
-                );
-                wp_nav_menu( $args );
-
-            ?>
+	<header>
+        <div role="banner"><h1></h1></div>
+        <nav>
+            <ul id="menu">
+                <li class="home"><a href="">Home</a></li>
+                <li class="about-link"><a href="">About</a></li>
+                <li class="work"><a href="">Work</a></li>
+                <li class="links"><a href="">Events</a></li>
+            </ul>
+            <ul id="social">
+                <li><a href="">linkedIn</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Facebook</a></li>
+            </ul>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

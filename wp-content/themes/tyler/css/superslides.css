@@ -30,6 +30,7 @@
     position: absolute;
     display: block;
     height: 39px;
+    opacity: 0;
     top: 42%;
     width: 39px;
     z-index: 999999;
@@ -37,7 +38,7 @@
 .slides-navigation a.prev {
     background: url(../images/next_arrow.svg) no-repeat center;
     background-size: contain;
-  left: 10px;
+  left: 70px;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);

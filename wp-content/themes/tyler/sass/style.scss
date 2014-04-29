@@ -117,6 +117,14 @@ body, #content {
     text-decoration: none;
 }
 
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 
 /*GLOBAL*/
 
@@ -159,12 +167,9 @@ $display-font: "prenton-display", sans-serif;
     -webkit-transition-delay: .1s;
 }
 @mixin trans-three {
-    transition: .3s all;
-    -moz-transition: .3s all;
-    -webkit-transition: .3s all;
-    transition-delay: 1s;
-    -moz-transition-delay: 1s;
-    -webkit-transition-delay: 1s;
+    transition: ease .5s all;
+    -moz-transition: ease .5s all;
+    -webkit-transition: ease .5s all;
 }
 @mixin h1 {
     font-family: $title-font;
@@ -191,7 +196,7 @@ $display-font: "prenton-display", sans-serif;
 @mixin h3 {
 	display: inline-block;
     font-family: $title-font;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 100;
 	letter-spacing: 1px;
     line-height: 1.2;
@@ -295,109 +300,102 @@ main {
 }
 
 /*MENU*/
-#main-menu {
-    @include block-ab;
-    top: 0; left: 0;
-    width: 60px; height: 60px;
-    z-index: 100;
-    &:hover #menu {
-        @include trans-one;
-        top: 60px;
-    }
-
-    h1 {
-        @include block-ab;
-        @include trans-three;
-        top: 0; left: 60px;
-        height: 60px; width: 240px;
-        color: white;
-        overflow: hidden;
-        background: $blackbg;
-		padding-left: 10px;
-        text-transform: uppercase;
-		line-height: 60px;
-        span {
-            font-size: 0.5em;
-            padding-left: 0.2em;
-        }
-    }
-}
-#main-logo {
-    @include block-rel;
-    @include trans-three;
-    width: 60px; height: 60px;
-    background-image: url('images/icons/logo.svg');
-    background-size: 60px;
-    background-repeat: no-repeat;
-    background-position: left;
-    background-color: none;
-    float: left;
-	z-index: 9999999;
-}
-#main-logo:hover {
-    @include trans-one;
-    background-color: white;
-}
-#menu {
-    @include block-ab;
-    @include trans-three;
-    top: -1000px; left: 0;
-    width: 60;
-    overflow: hidden;
-    background: $blackbg;
-    float: left;
-    z-index: 1;
-    li {
+header {
+    position: absolute;
+    div[role=banner] {
         @include block-rel;
+        @include trans-three;
         width: 60px; height: 60px;
-        background: none;
-        text-indent: -9999px;
+        z-index: 99;
         &:hover {
-
+            @include trans-one;
+            background-color: $blackbg;
+        }
+        h1 {
+            @include block-ab;
+            top: 0; left: 70px;
+            height: 60px; width: 200px;
+            color: white;
+            overflow: hidden;
+            background-image: url('images/icons/tyler.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            text-transform: uppercase;
+            line-height: 60px;
         }
     }
-    a {
-        display: block;
-        height: 100%;
-    }
-    .home {
-        background-image: url('images/icons/home.svg');
-        background-size: 40px;
-        background-repeat: no-repeat;
-        background-position: center;
-        &:hover {
-            background-color: #92B540;
-        }
-    }
-    .about-link {
-        background-image: url('images/icons/about.svg');
-        background-size: 40px;
-        background-repeat: no-repeat;
-        background-position: center;
-        &:hover {
-            background-color: #009BA6;
-        }
-    }
-    .work {
-        background-image: url('images/icons/work.svg');
-        background-size: 40px;
-        background-repeat: no-repeat;
-        background-position: center;
+    nav {
+        @include block-ab;
+        background: rgba(0,0,0,0.85);
         cursor: pointer;
-        &:hover {
-            background-color: #CD4D58;
+        top: 0; left: 0;
+        height: 100vh; width: 60px;
+        z-index: 100;
+        &:hover #menu {
+            @include trans-one;
         }
-    }
-    .links {
-        background-image: url('images/icons/links.svg');
-        background-size: 40px;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        &:hover {
-            background-color: #CDC638;
+        #menu {
+            @include block-ab;
+            @include trans-one;
+            top: 0; left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 1;
+            li {
+                @include block-rel;
+                width: 130px; height: 60px;
+                color: $white;
+                line-height: 60px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+                text-indent: 70px;
+                a {
+                    display: block;
+                    font-family: $title-font;
+                    font-size: 1.75em;
+                    font-weight: 100;
+                    height: 100%;
+                    letter-spacing: 1px;
+                }
+            }
+            .home {
+                background-image: url('images/icons/home.svg');
+                background-size: 40px;
+                &:hover {
+                    background-color: #92B540;
+                }
+            }
+            .about-link {
+                background-image: url('images/icons/about.svg');
+                background-size: 40px;
+                &:hover {
+                    background-color: #009BA6;
+                }
+            }
+            .work {
+                background-image: url('images/icons/work.svg');
+                background-size: 40px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #CD4D58;
+                }
+            }
+            .links {
+                background-image: url('images/icons/links.svg');
+                background-size: 40px;
+                cursor: pointer;
+                &:hover { 
+                    background-color: #CDC638;
+                }
+            }
         }
-    }
+        #social {
+            @include block-ab;
+            bottom: 0; left: 0;
+            width: 100%;
+        }
+    }  
 }
 
 /*MAIN PAGE*/
@@ -419,9 +417,6 @@ main {
     min-width: 250px;
     padding: 16px;
     z-index: 100;
-    .bkgd-title {
-        line-height: 1.5;
-    }
     .right-tog {
         @include block-ab;
         @include trans-one;
@@ -575,34 +570,61 @@ date {
     @include boxshadow;
     /*@include trans-two;*/
     top: 0; bottom: 0; left: -100%;
-    width: 50%;
+    max-width: 40%;
     overflow-y: auto;
     background: $white;
     z-index: 100;
+    
+    #filter {
+        background-color: hsl(208, 12%, 25%);
+        position: absolute; bottom: 0;
+        width: 100%;
+        @extend %clearfix;
+        li {
+            float: left;
+            list-style-type: none;
+            a {
+                color: $white;
+                display: block;
+                font-family: $display-font;
+                padding: 20px 12px;
+            }
+        }
+        a[role=close] {
+            @include trans-one;
+            background-image: url(images/icons/arrow.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 100%;
+            cursor: pointer;
+            float: right;
+            margin: 12px;
+            width: 30px; height: 30px;
+            &:hover {
+                -webkit-transform: translateX(-5px);
+                -moz-transform: translateX(-5px);
+                transform: translateX(-5px);
+            }
+        }
+        
+    }
 
     .work-grid {
         @include block-rel;
+        font-size: 0;
         width: 100%;
-        padding: 3%;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
         text-align: justify;
-        &::after {
-            content:'';
-            @include inline-rel;
-            width: 100%;
-        }
-
+        @extend %clearfix;
         li {
             @include inline-rel;
-            @include trans-one;
-            width: 32%; height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            @include trans-three;
+            float: left;
+            width: 33.3333%;
+            opacity: 1.0;
             overflow: hidden;
             &:hover div {
-                top: 102px;
+                bottom: 20px;
             }
             &:hover a {
                 @include trans-one;
@@ -614,8 +636,8 @@ date {
 
             img {
                 @include grayscale;
+                max-width: 100%;
             }
-
             a {
                 content:'';
                 @include block-ab;
@@ -626,12 +648,12 @@ date {
                 background-position: center;
                 background-repeat: no-repeat;
             }
-
             div {
                 @include block-ab;
                 @include trans-one;
-                top: 200px;
+                bottom: -200px;
                 background: $blackbg;
+                font-size: 16px;
                 width: 100%;
                 h3 {
                     display: inline-block;
@@ -648,6 +670,8 @@ date {
                 }
             }
         }
+
+
     }
 }
 
@@ -657,6 +681,15 @@ footer {
     @include block-ab;
     /*@include trans-two;*/
     left: 0; right: 0; bottom: -200px;
+    height: 200px;
+    background: $white;
+    z-index: 99999;
+}
+
+#events {
+    @include block-ab;
+    /*@include trans-two;*/
+    left: 0; right: 0; top: -200px;
     height: 200px;
     background: $white;
     z-index: 99999;
@@ -727,7 +760,7 @@ footer {
 
 #colophon{
     @include block-rel;
-    font-size: 10px;
+    font-size: 1em;
     color: #646464;
     width: 100%;
     margin: 20px auto;

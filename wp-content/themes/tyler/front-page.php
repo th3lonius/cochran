@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'events', 'none' ); ?>
+
 <section id="content" role="main">
     <figcaption class="bkgd-desc">
         <h3 class="bkgd-title">Recent Work</h3>

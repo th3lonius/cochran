@@ -15,6 +15,11 @@
 <section class="left">
 
 <?php if ( $work_query->have_posts() ) : ?>
+    
+    <ul id="filter">
+        <?php wp_list_categories('hierarchical=0&title_li=&show_option_all=All&hide_empty=0&exclude=1'); ?>
+        <a role="close"></a>
+    </ul>
 
     <ul class="work-grid">
 
@@ -26,18 +31,19 @@
             $rows = get_field('images'); // get all the rows
             $first_row = $rows[0]; // get the first row
             $first_row_image = $first_row['image' ]; // get the sub field value
-			$size = 'medium';
+			$size = 'thumbnail';
             $image = wp_get_attachment_image_src( $first_row_image, $size );
 
         ?>
 
-        <li>
+        <li class="<?php
+ foreach((get_the_category()) as $category) {
+ echo $category->cat_name . ' ';
+ }
+ ?>">
 			<img src="<?php echo $image[0]; ?>"/>
             <a class="work-link" href="<?php the_permalink(); ?>"></a>
-            <div>
-                <h3><?php the_title() ;?></h3>
-                <date><?php the_field( 'date' ); ?></date>
-            </div>
+            <div><h3><?php the_title() ;?></h3></div>
         </li>
 
 		<?php endif; ?>
