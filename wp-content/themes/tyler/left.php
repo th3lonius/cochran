@@ -42,8 +42,7 @@
  }
  ?>">
 			<img src="<?php echo $image[0]; ?>"/>
-            <a class="work-link" href="<?php the_permalink(); ?>"></a>
-            <div><h3><?php the_title() ;?></h3></div>
+            <a class="work-link" href="<?php the_permalink(); ?>"><div><h3><?php the_title() ;?></h3></div></a>
         </li>
 
 		<?php endif; ?>

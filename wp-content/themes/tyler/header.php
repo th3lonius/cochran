@@ -32,9 +32,9 @@
                 <li class="links"><a href="">Events</a></li>
             </ul>
             <ul id="social">
-                <li><a href="">linkedIn</a></li>
-                <li><a href="">Twitter</a></li>
-                <li><a href="">Facebook</a></li>
+                <li class="linkedin"><a href="">linkedIn</a></li>
+                <li class="twitter"><a href="">Twitter</a></li>
+                <li class="facebook"><a href="">Facebook</a></li>
             </ul>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

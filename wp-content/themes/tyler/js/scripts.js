@@ -98,11 +98,11 @@ $("body").on('click', '#content, .work-link, a[role=close]', function(event) {
     };
 });
     
-$("body").on('click', 'nav', function(event) {
+$("body").on('click', 'header nav', function(event) {
     var target = $( event.target );
     var divwidth = parseInt($(this).css('width'));
     
-    if (divwidth < 130 & target.is('nav') ) {
+    if (divwidth < 130 & target.is('header nav') ) {
         $(this).animate({width: 130}, 100),
         $('header h1').animate({left: 160}, 150, function(){
             $(this).delay(60).animate({left: 140}, 100);
