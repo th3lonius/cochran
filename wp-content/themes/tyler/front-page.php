@@ -1,11 +1,8 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'events', 'none' ); ?>
+<?php get_template_part( 'exhibition', 'list' ); ?>
 
 <section id="content" role="main">
-    <figcaption class="bkgd-desc">
-        <h3 class="bkgd-title">Recent Work</h3>
-    </figcaption>
 
 	<div id="slides">
     <!-- Home page slider of portfolio work -->
@@ -19,6 +16,7 @@
         $slideshow_query = new WP_Query( $args );
 
     ?>
+
     <?php if ( have_posts() ) : ?>
 
 		<ul class="slides-container">

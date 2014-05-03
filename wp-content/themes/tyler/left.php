@@ -10,8 +10,6 @@
 
 ?>
 
-<span style="font-size: 26px; color: red; float: right;">I am left</span>
-
 <section class="left">
 
 <?php if ( $work_query->have_posts() ) : ?>

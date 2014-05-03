@@ -23,12 +23,12 @@
 <body <?php body_class(); ?>>
 
 	<header>
-        <div role="banner"><h1></h1></div>
         <nav>
             <ul id="menu">
-                <li class="home"><a href="">Home</a></li>
+                <li class="home"><a href="<?php echo site_url(); ?>">Home</a></li>
                 <li class="about-link"><a href="">About</a></li>
                 <li class="work"><a href="">Work</a></li>
+                <li class="exhibitions-link"><a href="">Exhibitions</a></li>
                 <li class="links"><a href="">Events</a></li>
             </ul>
             <ul id="social">
@@ -37,5 +37,6 @@
                 <li class="facebook"><a href="">Facebook</a></li>
             </ul>
 		</nav><!-- #site-navigation -->
+		<div role="banner"></div>
 	</header><!-- #masthead -->
 

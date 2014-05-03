@@ -38,13 +38,16 @@
 .slides-navigation a.prev {
     background: url(../images/next_arrow.svg) no-repeat center;
     background-size: contain;
-  left: 70px;
+    left: 70px;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     transform: scaleX(-1);
     -ms-filter: fliph; /*IE*/
     filter: fliph; /*IE*/
+}
+@media only screen and (max-width: 480px) {
+    .slides-navigation a.prev { left: 10px; }
 }
 .slides-navigation a.next {
     background: url(../images/next_arrow.svg) no-repeat center;

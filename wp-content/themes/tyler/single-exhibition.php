@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Work Page */
+/* Template Name: Exhibition Page */
 
 get_header(); ?>
 

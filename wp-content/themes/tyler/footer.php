@@ -1,6 +1,5 @@
-
 <footer id="footer">
-    <h2 id="exlinks-title">Shows / Events</h2>
+    <h2 id="exlinks-title">Exhibitions</h2>
     <div id="exlinks-cont">
         <a href="http://en.wikipedia.org/wiki/Frank_Gehry" id="one" class="exlink">Wikipedia</a>
         <a href="http://www.achievement.org/autodoc/page/geh0bio-1" id="two" class="exlink">Academy of Achievment</a>

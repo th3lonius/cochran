@@ -4,6 +4,8 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'exhibition', 'list' ); ?>
+
 <?php
 
     $args = array(

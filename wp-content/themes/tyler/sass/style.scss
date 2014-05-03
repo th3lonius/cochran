@@ -26,6 +26,7 @@ time, mark, audio, video {
     border:0;
     outline:0;
     font-size:100%;
+    list-style: none;
     vertical-align:baseline;
     background:transparent;
 }
@@ -53,7 +54,8 @@ q:before, q:after {
     content:none;
 }
 
-a {
+a, a:visited, a:active {
+    color: #FFF;
     margin:0;
     padding:0;
     font-size:100%;
@@ -125,6 +127,40 @@ body, #content {
   }
 }
 
+/*BREAKPOINTS*/
+$break-small: 500px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screen {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screen {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+/*ANIMATIONS*/
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes $animation-name {
+        @content;
+    }
+    @-moz-keyframes $animation-name {
+        @content;
+    }
+    @keyframes $animation-name {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    animation: #{$str};
+}
 
 /*GLOBAL*/
 
@@ -137,6 +173,7 @@ $blackbg: rgba(0,0,0,0.7);
 $white: rgba(255,255,255,1.0);
 $title-font: "prenton-ultra-condensed", sans-serif;
 $display-font: "prenton-display", sans-serif;
+$hand-font: "felt-tip-woman", sans-serif;
 
 @mixin block-rel {
     display: block;
@@ -167,9 +204,9 @@ $display-font: "prenton-display", sans-serif;
     -webkit-transition-delay: .1s;
 }
 @mixin trans-three {
-    transition: ease .5s all;
-    -moz-transition: ease .5s all;
-    -webkit-transition: ease .5s all;
+    transition: ease .3s all;
+    -moz-transition: ease .3s all;
+    -webkit-transition: ease .3s all;
 }
 @mixin h1 {
     font-family: $title-font;
@@ -245,10 +282,10 @@ $display-font: "prenton-display", sans-serif;
     -webkit-filter: grayscale(0%);
 }
 
-@mixin boxshadow {
-    -webkit-box-shadow: 2px 0 8px rgba(0,0,0,0.4);
-    -moz-box-shadow: 2px 0 8px rgba(0,0,0,0.4);
-    box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+@mixin box-shadow( $horiz, $vert, $blur, $spread, $color ){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
 }
 
 h1 {
@@ -302,22 +339,29 @@ main {
 /*HEADER*/
 header {
     position: absolute;
+    width: 100%;
+    @include trans-three;
     div[role=banner] {
-        @include block-rel;
-        @include trans-three;
-        width: 60px; height: 60px;
+        @include block-ab;
+        @include trans-one;
+        height: 60px;
+        left: 70px;
+        top: 0;
         z-index: 99;
         &:hover {
             @include trans-one;
             background-color: $blackbg;
         }
+        @include respond-to(mobile) {
+            left: 10px;
+            top: 60px;
+        }
         h1 {
             @include block-ab;
-            top: 0; left: 70px;
-            height: 60px; width: 200px;
+            height: 60px; width: 300px;
             color: white;
             overflow: hidden;
-            background-image: url('images/icons/tyler.svg');
+            background-image: url('images/icons/tylerthin.svg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -326,8 +370,8 @@ header {
         }
     }
     nav {
-        @include block-ab;
-        background: rgba(0,0,0,0.85);
+        @include block-rel;
+        background: rgba(26,26,26,0.4);
         cursor: pointer;
         top: 0; left: 0;
         height: 100vh; width: 60px;
@@ -335,28 +379,44 @@ header {
         &:hover #menu {
             @include trans-one;
         }
+        @include respond-to(mobile) {
+            height: 60px;
+            width: 100%;
+        }
         #menu {
-            @include block-ab;
+            @include block-rel;
             @include trans-one;
             top: 0; left: 0;
             width: 100%;
-            overflow: hidden;
             z-index: 1;
             li {
                 @include block-rel;
-                width: 130px; height: 60px;
+                @include trans-two;
+                width: 100%; height: 60px;
                 color: $white;
                 line-height: 60px;
                 background-repeat: no-repeat;
                 background-position: 10px center;
                 text-indent: 70px;
+                @include respond-to(mobile) {
+                    @include inline-rel;
+                    background-position: center;
+                    width: 24.3%;
+                }
+                &:hover a {
+                    opacity: 1;
+                }
                 a {
-                    display: block;
-                    font-family: $title-font;
-                    font-size: 1.75em;
-                    font-weight: 100;
+                    @include trans-two;
+                    font-family: $hand-font;
+                    font-size: 1.5em;
+                    font-weight: 400;
                     height: 100%;
-                    letter-spacing: 1px;
+                    opacity: 0;
+                    -webkit-transform: rotate(5deg);
+                    @include respond-to(mobile) {
+                        text-indent: -9999px;
+                    }
                 }
             }
             .home {
@@ -381,6 +441,15 @@ header {
                     background-color: #CD4D58;
                 }
             }
+            .exhibitions-link {
+                background-image: url('images/icons/exhibitions.svg');
+                background-position: 12px center;
+                background-size: 36px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #CD4D58;
+                }
+            }
             .links {
                 background-image: url('images/icons/links.svg');
                 background-size: 40px;
@@ -395,45 +464,54 @@ header {
             @include trans-one;
             bottom: 0; left: 0;
             width: 100%;
-            overflow: hidden;
             z-index: 1;
+            @include respond-to(mobile) {
+                display: none;
+            }
             li {
                 @include block-rel;
-                width: 130px; height: 60px;
+                width: 60px; height: 60px;
                 color: $white;
                 line-height: 60px;
                 background-repeat: no-repeat;
-                background-position: 10px center;
+                background-position: 14px center;
                 text-indent: 70px;
+                &:hover a {
+                    opacity: 1;
+                }
                 a {
-                    display: block;
-                    font-family: $title-font;
-                    font-size: 1.75em;
-                    font-weight: 100;
+                    @include trans-two;
+                    font-family: $hand-font;
+                    font-size: 1.5em;
+                    font-weight: 400;
                     height: 100%;
-                    letter-spacing: 1px;
+                    opacity: 0;
+                    -webkit-transform: rotate(5deg);
+                    @include respond-to(mobile) {
+                        text-indent: -9999px;
+                    }
                 }
             }
             .twitter {
                 background-image: url('images/icons/twitter.svg');
-                background-size: 30%;
+                background-size: 50%;
                 &:hover {
-                    background-color: #92B540;
+                    background-color: #009BA6;
                 }
             }
             .linkedin {
                 background-image: url('images/icons/linkedin.svg');
-                background-size: 30%;
+                background-size: 50%;
                 &:hover {
-                    background-color: #92B540;
+                    background-color: #009BA6;
                 }
             }
             .facebook {
                 background-image: url('images/icons/facebook.svg');
-                background-position: 20px center;
-                background-size: 20px;
+                background-position: 21px center;
+                background-size: 16px;
                 &:hover {
-                    background-color: #92B540;
+                    background-color: #009BA6;
                 }
             }
         }
@@ -457,8 +535,13 @@ header {
     top: 60px; right: 0;
     background: $blackbg;
     min-width: 250px;
-    padding: 16px;
+    padding: 10px 16px;
     z-index: 100;
+    @include respond-to(mobile) {
+        bottom: 200px;
+        top: auto;
+        width: 100%;
+    }
     .right-tog {
         @include block-ab;
         @include trans-one;
@@ -521,12 +604,23 @@ date {
 .right {
     @include block-ab;
     /*@include trans-two;*/
-    top: 0; bottom: 0; right: -550px;
-    width: 550px;
-    background: #303030;
+    top: 0; bottom: 0; right: -100%;
+    width: 40%;
+    background: rgba(26,26,26,0.75);
     z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
+    @include respond-to(medium-screen) {
+        width: 60%;
+    }
+    @include respond-to(mobile) {
+        width: 100%;
+    }
+    
+    a[role=close] {
+        position: absolute;
+        top: 20px; left: 20px;
+    }
 
     #content-cont {
         @include block-rel;
@@ -606,32 +700,6 @@ date {
 }
 /*END RIGHT*/
 
-/*LEFT SECTION*/
-.left {
-    @include block-ab;
-    @include boxshadow;
-    /*@include trans-two;*/
-    top: 0; bottom: 0; left: -100%;
-    max-width: 40%;
-    overflow-y: auto;
-    background: $white;
-    z-index: 100;
-    
-    #filter {
-        background-color: hsl(208, 12%, 25%);
-        position: absolute; bottom: 0;
-        width: 100%;
-        @extend %clearfix;
-        li {
-            float: left;
-            list-style-type: none;
-            a {
-                color: $white;
-                display: block;
-                font-family: $display-font;
-                padding: 20px 12px;
-            }
-        }
         a[role=close] {
             @include trans-one;
             background-image: url(images/icons/arrow.svg);
@@ -640,7 +708,6 @@ date {
             background-size: 100%;
             cursor: pointer;
             float: right;
-            margin: 12px;
             width: 30px; height: 30px;
             &:hover {
                 -webkit-transform: translateX(-5px);
@@ -648,9 +715,39 @@ date {
                 transform: translateX(-5px);
             }
         }
+
+/*LEFT SECTION*/
+.left {
+    @include block-ab;
+    /*@include trans-two;*/
+    top: 0; bottom: 0; left: -100%;
+    max-width: 50%;
+    overflow-y: auto;
+    z-index: 100;
+    @include respond-to(mobile) {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    #filter {
+        background-color: rgba(26,26,26,0.7);
+        position: absolute; bottom: 0;
+        @extend %clearfix;
+        li {
+            float: left;
+            a {
+                color: $white;
+                display: block;
+                font-family: $display-font;
+                padding: 20px 12px;
+            }
+        }
+        a[role=close] {
+            float: right;
+            margin: 12px;
+        }
         
     }
-
     .work-grid {
         @include block-rel;
         font-size: 0;
@@ -665,6 +762,12 @@ date {
             width: 33.3333%;
             opacity: 1.0;
             overflow: hidden;
+            @include respond-to(medium-screen) {
+                width: 50%;
+            }
+            @include respond-to(mobile) {
+                width: 50%;
+            }
             &:hover div {
                 bottom: 20px;
             }
@@ -714,22 +817,89 @@ date {
     }
 }
 
+/*EXHIBITIONS*/
+@include keyframes(bounceLeft) {
+    0% { left: -14px; }
+    50% { left: -8%; }
+    80% { left: -14px; }
+    100% { background: #CD4D58; }
+}
+
+@include keyframes(fadeWhite) {
+    0% { color: $black; }
+    100% { color: $white; }
+}
+
+#exhibitions {
+    @include block-ab;
+    @include box-shadow(2px, 0, 8px, 2px, rgba(0,0,0,0.3));
+    /*@include trans-two;*/
+    left: 0; right: 0; top: -60%;
+    height: 33.3333%;
+    background: $white;
+    overflow-y: scroll;
+    padding: 20px;
+    z-index: 99999;
+}
+
+.exhibition-list {
+    margin: 0 auto;
+    max-width: 80%;
+    h2 {
+        border: 2px solid $black;
+        display: inline-block;
+        font-size: 2em;
+        letter-spacing: 0.2em;
+        padding: 0 10px;
+        text-transform: uppercase;
+        &::first-letter {
+            letter-spacing: 0.3em;
+        }
+    }
+    li {
+        margin-bottom: 1em;
+        &:first-child {
+            margin-left: -14px;
+        }
+        a {
+            @include trans-one;
+            display: inline-block;
+            position: relative;
+            &::before {
+                @include trans-one;
+                background: $black;
+                content: "";
+                height: 100%;
+                left: -14px;
+                position: absolute;
+                top: -4px;
+                width: 4px;
+                z-index: -1;
+            }
+            &:hover::before {
+                @include animation('bounceLeft 0.4s ease forwards');
+            }
+            h3 {
+                @include trans-one;
+                color: $black;
+                font-family: "prenton-condensed";
+                font-size: 2em;
+                text-transform: none;
+            }
+            h4 {
+                @include trans-one;
+                color: $black;
+            }
+        }
+    }
+}
 
 /*FOOTER*/
 footer {
     @include block-ab;
     /*@include trans-two;*/
-    left: 0; right: 0; bottom: -200px;
-    height: 200px;
-    background: $white;
-    z-index: 99999;
-}
-
-#events {
-    @include block-ab;
-    /*@include trans-two;*/
-    left: 0; right: 0; top: -200px;
-    height: 200px;
+    left: 0; right: 0; bottom: -60%;
+    height: 300px;
     background: $white;
     z-index: 99999;
 }

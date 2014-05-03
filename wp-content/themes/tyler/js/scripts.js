@@ -32,51 +32,57 @@ $("body").mousemove(function(event){
     event.stopPropagation();
 });
 
-$(".links a, .work a, .events a, .about-link a").removeAttr("href").addClass('tooltips');
+$(".links a, .work a, .exhibitions-link a, .about-link a").removeAttr("href").addClass('tooltips');
 $(".slides-navigation a").addClass('no-ajaxy');
-
+    
+var $rightDiv = $('.right');
+var $navsOne = $('header nav, #right-tog, .bkgd-desc');
+var $navsTwo = $('header nav, header div, .right-tog, .bkgd-desc');
+var $content = $('#content'); 
+    
 /*RIGHT ANIMATIONS*/
 $("body").on('click', '.right-tog', function(event) {
-    $('.right').animate({right: 0}),
-    $('#content').animate({right: 300}),
-    $('header nav, .right-tog, .bkgd-desc').fadeOut(300);
+    $rightDiv.animate({right: 0}, 300);
+    $content.animate({right: 100},200,function(){
+        $(this).animate({right: 0});
+    });
+    $navsTwo.fadeOut(300);
 });
 
-$("body").on('click', '#content, .click-thru', function(event) {
+$("body").on('click', '#content, .click-thru, a[role=close]', function(event) {
     var divpos = parseInt($('.right').css('right'));
 
     if (divpos == 0) {
-        $('.right').animate({right: -550}),
-        $('#content').animate({right: 0}),
-        $('header nav, .right-tog, .bkgd-desc').fadeIn(300);
+        $rightDiv.animate({right: '-100%'}),
+        $navsTwo.fadeIn(300);
     };
 });
 
 /*LINKS ANIMATIONS*/
-$("body").on('click', '.events', function(event) {
-    $('#events').animate({top: 0}),
-    $('#content').animate({top: 100}),
-    $('header nav, #right-tog, .bkgd-desc').fadeOut(300);
+$("body").on('click', '.exhibitions-link', function(event) {
+    $('#exhibitions').animate({top: 0}),
+    $content.animate({top: 100}),
+    $navsOne.fadeOut(300);
 
     var rightpos = parseInt($('.right').css('right'));
 
     if (rightpos == 0) {
-        $('.right').animate({right: -600}),
-        $('#content').animate({right: 0}),
+        $rightDiv.animate({right: -600}),
+        $content.animate({right: 0}),
         $('#main-menu, #right-tog, .bkgd-desc').fadeIn(300);
     };
 });
     
 $("body").on('click', '.links, .links-thru', function(event) {
     $('#footer').animate({bottom: 0}),
-    $('#content').animate({bottom: 100}),
-    $('header nav, #right-tog, .bkgd-desc').fadeOut(300);
+    $content.animate({bottom: 100}),
+    $navsOne.fadeOut(300);
 
     var rightpos = parseInt($('.right').css('right'));
 
     if (rightpos == 0) {
-        $('.right').animate({right: -600}),
-        $('#content').animate({right: 0}),
+        $rightDiv.animate({right: -600}),
+        $content.animate({right: 0}),
         $('#main-menu, #right-tog, .bkgd-desc').fadeIn(300);
     };
 });
@@ -84,25 +90,27 @@ $("body").on('click', '.links, .links-thru', function(event) {
 /*LEFT ANIMATIONS*/
 $("body").on('click', '.work', function(event) {
     $('.left').animate({left: 0}),
-    $('#content').animate({left: 300}),
-    $('header nav, #right-tog, .bkgd-desc').fadeOut(300);
+    $content.animate({left: 100},200,function(){
+        $(this).animate({left: 0});
+    });
+    $navsOne.fadeOut(300);
 });
 
 $("body").on('click', '#content, .work-link, a[role=close]', function(event) {
-    var divpos = parseInt($('.left').css('left'));
+    var divPosition = parseInt($('.left').css('left'));
 
-    if (divpos == 0) {
+    if (divPosition == 0) {
         $('.left').animate({left: -1000}),
-        $('#content').animate({left: 0}),
-        $('header nav, #right-tog, .bkgd-desc').fadeIn(300);
+        $content.animate({left: 0}),
+        $navsOne.fadeIn(300);
     };
 });
     
-$("body").on('click', 'header nav', function(event) {
+$("body").on('click', 'header navi', function(event) {
     var target = $( event.target );
-    var divwidth = parseInt($(this).css('width'));
+    var divWidth = parseInt($(this).css('width'));
     
-    if (divwidth < 130 & target.is('header nav') ) {
+    if (divWidth < 130 & target.is('header nav') ) {
         $(this).animate({width: 130}, 100),
         $('header h1').animate({left: 160}, 150, function(){
             $(this).delay(60).animate({left: 140}, 100);
@@ -116,13 +124,13 @@ $("body").on('click', 'header nav', function(event) {
 /*LINKS ANIMATIONS*/
 $("body").on('click', '#content', function(event) {
     var divpos = parseInt($('footer').css('bottom'));
-    var eventspos = parseInt($('#events').css('top'));
+    var eventspos = parseInt($('#exhibitions').css('top'));
 
     if (divpos == 0 || eventspos == 0) {
-        $('footer').animate({bottom: -200}),
-        $('#events').animate({top: -200}),
-        $('#content').animate({bottom: 0, top: 0}),
-        $('header nav, #right-tog, .bkgd-desc').fadeIn(300);
+        $('footer').animate({bottom: '-60%'}),
+        $('#exhibitions').animate({top: '-60%'}),
+        $content.animate({bottom: 0, top: 0}),
+        $navsOne.fadeIn(300);
     };
 });
 
@@ -133,12 +141,12 @@ $("body").on('click', '#work-thru', function(event) {
     $('#main').animate({left: 300}),
     $('#right').animate({right: -600}),
     $('#main').animate({right: 0}),
-    $('header nav, #right-tog, .bkgd-desc').fadeOut(300);
+    $navsOne.fadeOut(300);
 });
 $("body").on('click', '#about-thru', function(event) {
     $('#right').animate({right: -600}),
     $('#main').animate({right: 0}),
-    $('header nav, #right-tog, .bkgd-desc').fadeIn(300);
+    $navsOne.fadeIn(300);
 });
     
 /*CATEGORY FILTER*/
@@ -162,7 +170,5 @@ $('#filter li a').click(function() {
 
     return false;
 });
-    
-    
 
 });
