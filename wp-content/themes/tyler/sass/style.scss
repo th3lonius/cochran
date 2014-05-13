@@ -169,11 +169,11 @@ $blue: #009BA6;
 $red: #CD4D58;
 $yellow: #CDC638;
 $black: #333332;
-$blackbg: rgba(0,0,0,0.7);
+$blackbg: rgba(0,0,0,0.6);
 $white: rgba(255,255,255,1.0);
-$title-font: "prenton-ultra-condensed", sans-serif;
+$title-font: "atrament-web", sans-serif;
 $display-font: "prenton-display", sans-serif;
-$hand-font: "felt-tip-woman", sans-serif;
+$hand-font: "gooddog-new", sans-serif;
 
 @mixin block-rel {
     display: block;
@@ -233,12 +233,11 @@ $hand-font: "felt-tip-woman", sans-serif;
 @mixin h3 {
 	display: inline-block;
     font-family: $title-font;
-    font-size: 2.5em;
-    font-weight: 100;
+    font-size: 2em;
+    font-weight: 300;
 	letter-spacing: 1px;
     line-height: 1.2;
     color: $white;
-	text-transform: uppercase;
 }
 @mixin h3-alt {
     font-family: $display-font;
@@ -248,9 +247,10 @@ $hand-font: "felt-tip-woman", sans-serif;
     color: $white;
 }
 @mixin h4 {
-    font-family: $display-font;
+    font-family: $title-font;
     font-size: 1em;
     font-weight: 100;
+	letter-spacing: 2px;
     line-height: 20px;
     color: $white;
 	text-transform: uppercase;
@@ -286,6 +286,12 @@ $hand-font: "felt-tip-woman", sans-serif;
   -webkit-box-shadow: $horiz $vert $blur $spread $color;
   -moz-box-shadow: $horiz $vert $blur $spread $color;
   box-shadow: $horiz $vert $blur $spread $color;
+}
+
+@mixin imgblur($radius) {
+	-webkit-filter: blur($radius+px); -moz-filter: blur($radius+px);
+	-o-filter: blur($radius+px); -ms-filter: blur($radius+px);
+	filter: url(images/blur.svg#blur); filter: blur($radius+px); filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius');
 }
 
 h1 {
@@ -376,14 +382,14 @@ header {
         top: 0; left: 0;
         height: 100vh; width: 60px;
         z-index: 100;
-        &:hover #menu {
+        &:hover .main-menu {
             @include trans-one;
         }
         @include respond-to(mobile) {
             height: 60px;
             width: 100%;
         }
-        #menu {
+        ul {
             @include block-rel;
             @include trans-one;
             top: 0; left: 0;
@@ -409,7 +415,7 @@ header {
                 a {
                     @include trans-two;
                     font-family: $hand-font;
-                    font-size: 1.5em;
+                    font-size: 1.25em;
                     font-weight: 400;
                     height: 100%;
                     opacity: 0;
@@ -418,7 +424,7 @@ header {
                         text-indent: -9999px;
                     }
                 }
-            }
+			}
             .home {
                 background-image: url('images/icons/home.svg');
                 background-size: 40px;
@@ -436,7 +442,6 @@ header {
             .work {
                 background-image: url('images/icons/work.svg');
                 background-size: 40px;
-                cursor: pointer;
                 &:hover {
                     background-color: #CD4D58;
                 }
@@ -445,7 +450,6 @@ header {
                 background-image: url('images/icons/exhibitions.svg');
                 background-position: 12px center;
                 background-size: 36px;
-                cursor: pointer;
                 &:hover {
                     background-color: #CD4D58;
                 }
@@ -453,43 +457,8 @@ header {
             .links {
                 background-image: url('images/icons/links.svg');
                 background-size: 40px;
-                cursor: pointer;
                 &:hover { 
                     background-color: #CDC638;
-                }
-            }
-        }
-        #social {
-            @include block-ab;
-            @include trans-one;
-            bottom: 0; left: 0;
-            width: 100%;
-            z-index: 1;
-            @include respond-to(mobile) {
-                display: none;
-            }
-            li {
-                @include block-rel;
-                width: 60px; height: 60px;
-                color: $white;
-                line-height: 60px;
-                background-repeat: no-repeat;
-                background-position: 14px center;
-                text-indent: 70px;
-                &:hover a {
-                    opacity: 1;
-                }
-                a {
-                    @include trans-two;
-                    font-family: $hand-font;
-                    font-size: 1.5em;
-                    font-weight: 400;
-                    height: 100%;
-                    opacity: 0;
-                    -webkit-transform: rotate(5deg);
-                    @include respond-to(mobile) {
-                        text-indent: -9999px;
-                    }
                 }
             }
             .twitter {
@@ -515,10 +484,44 @@ header {
                 }
             }
         }
-    }  
+		ul.social-links {
+			@include block-ab;
+            bottom: 0; left: 0; top: auto;
+            @include respond-to(mobile) {
+                display: none;
+			}
+		}
+	}
 }
 
 /*MAIN PAGE*/
+.splash {
+	background: url(images/splash.svg) no-repeat center;
+	position: absolute;
+	top: 10%; left: 50%;
+	width: 60%; height: 70%;
+	z-index: 99;
+	-webkit-transform: translate(-50%);
+}
+
+.blurry {
+	@include imgblur(2);
+	transition: filter 1s ease, opacity 1.2s ease-out;
+	-webkit-transition: -webkit-filter 1s ease, opacity 1.2s ease-out;
+	-moz-transition: all 1s ease;
+	-o-transition: -o-filter 1s ease, opacity 1.2s ease-out;
+	opacity: 0.7;
+}
+
+.notblurry {
+	@include imgblur(0);
+	transition: filter 1s ease, opacity 1.2s ease-out;
+	-webkit-transition: -webkit-filter 1s ease, opacity 1.2s ease-out;
+	-moz-transition: all 1s ease;
+	-o-transition: -o-filter 1s ease, opacity 1.2s ease-out;
+	opacity: 1;
+}
+
 #main {
     /*@include trans-two;*/
 }
@@ -595,6 +598,7 @@ header {
 date {
 	@include h4;
 	color: #cecece;
+	font-size: 1.2em;
 	line-height: 1.5;
 	padding-left: 0.25em;
 }
@@ -606,12 +610,12 @@ date {
     /*@include trans-two;*/
     top: 0; bottom: 0; right: -100%;
     width: 40%;
-    background: rgba(26,26,26,0.75);
+    background: rgba(26,26,26,0.8);
     z-index: 999;
     overflow-x: hidden;
     overflow-y: auto;
     @include respond-to(medium-screen) {
-        width: 60%;
+		width: 60%;
     }
     @include respond-to(mobile) {
         width: 100%;
@@ -719,103 +723,108 @@ date {
 /*LEFT SECTION*/
 .left {
     @include block-ab;
-    /*@include trans-two;*/
-    top: 0; bottom: 0; left: -100%;
-    max-width: 50%;
-    overflow-y: auto;
+	display: none;
+    top: 0; bottom: 0; left: 0; right: 0;
+	text-align: center;
     z-index: 100;
     @include respond-to(mobile) {
         max-width: 100%;
         width: 100%;
     }
-    
-    #filter {
-        background-color: rgba(26,26,26,0.7);
-        position: absolute; bottom: 0;
-        @extend %clearfix;
-        li {
-            float: left;
-            a {
-                color: $white;
-                display: block;
-                font-family: $display-font;
-                padding: 20px 12px;
-            }
-        }
-        a[role=close] {
-            float: right;
-            margin: 12px;
-        }
-        
-    }
-    .work-grid {
-        @include block-rel;
-        font-size: 0;
-        width: 100%;
-        overflow: hidden;
-        text-align: justify;
-        @extend %clearfix;
-        li {
-            @include inline-rel;
-            @include trans-three;
-            float: left;
-            width: 33.3333%;
-            opacity: 1.0;
-            overflow: hidden;
-            @include respond-to(medium-screen) {
-                width: 50%;
-            }
-            @include respond-to(mobile) {
-                width: 50%;
-            }
-            &:hover div {
-                bottom: 20px;
-            }
-            &:hover a {
-                @include trans-one;
-                top: 0;
-            }
-            &:hover img {
-                @include fullcolor;
-            }
-            img {
-                @include grayscale;
-                max-width: 100%;
-            }
-            a {
-                content:'';
-                @include block-ab;
-                width: 100%; height: 100%;
-                top: -100%;
-                background-image: url('images/icons/magglass.svg');
-                background-size: 25px;
-                background-position: center 40px;
-                background-repeat: no-repeat;
-                div {
-                    @include block-ab;
-                    @include trans-one;
-                    bottom: -500px;
-                    background: $blackbg;
-                    font-size: 16px;
-                    width: 100%;
-                    h3 {
-                        display: inline-block;
-                        position: relative;
-                        padding: 10px;
-                        color: white;
-                    }
-                    p {
-                        display: block;
-                        position: relative;
-                        width: 100%;
-                        font-size: 1em;
-                        padding: 24px 10px;
-                    }
-                }
-            }
-        }
-    }
+	nav {
+		@include trans-one;
+		background-color: rgba(26,26,26,0.7);
+		height: 36px;
+		overflow: hidden;
+		position: absolute; top: 0;
+		width: 100px;
+		z-index: 99;
+		&:hover {
+			width: 100%;
+		}
+		.filters {
+			width: 100%;
+			li {
+				@include trans-two;
+				display: inline-block;
+				&.current {
+					background: hsl(57, 60%, 51%);
+				}
+				&.current span {
+					color: #FFF;
+				}
+				span {
+					color: $white;
+					display: block;
+					font-family: $title-font;
+					font-size: 1.5em;
+					letter-spacing: 1px;
+					line-height: 36px;
+					padding: 0 18px;
+					text-transform: uppercase;
+					&:hover {
+						background: hsl(57, 60%, 51%);
+						color: #FFF;
+					}
+				}
+			}
+			a[role=close] {
+				float: right;
+				margin: 4px;
+			}
+		}
+	}
+	.work-grid {
+		margin: 0 auto;
+		width: 50%;
+		.item {
+			display: none;
+			margin: 1%;
+			opacity: 0;
+			overflow: hidden;
+			width: 25%;
+			img {
+				position: relative;
+			}
+			.label {
+				background: #e95a44;
+				position: absolute;
+				width: 100%;
+				height: 50px;
+				bottom: -50px;
+				a {
+					display: block;
+					height: 100%;
+					padding: 6px 12px;
+					position: absolute;
+					text-align: left;
+					top: 0;	left: 0;
+				}
+			}
+		}
+	}
 }
+
+
+
+
+		.item .label-bg {
+			
+
+		}
+	
+		.item .label-text {
+			color:#fff;
+			position: relative;
+			z-index:500;
+			padding:5px 8px;
+		}
+			
+			.item .text-category {
+				display:block;
+				font-size:9px;
+			}
+
 
 /*EXHIBITIONS*/
 @include keyframes(bounceLeft) {
@@ -976,17 +985,3 @@ footer {
     padding-left: 100px;
 }
 /*END FOOTER*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-

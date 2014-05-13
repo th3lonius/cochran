@@ -6,6 +6,52 @@ $('#slides').superslides({
 	animation_speed: 'normal',
     pagination: false
 });
+	
+
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('.work-grid').mixitup({
+					targetSelector: '.item',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
+			
+				// Simple parallax effect
+				$('.work-grid .item').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -20}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -50}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+
+		
     
 $("body").mousemove(function(event){       
     var mouseX = event.pageX / $(window).width();
@@ -32,8 +78,7 @@ $("body").mousemove(function(event){
     event.stopPropagation();
 });
 
-$(".links a, .work a, .exhibitions-link a, .about-link a").removeAttr("href").addClass('tooltips');
-$(".slides-navigation a").addClass('no-ajaxy');
+$(".links a, .work a, .exhibitions-link a").removeAttr("href").addClass('tooltips');
     
 var $rightDiv = $('.right');
 var $navsOne = $('header nav, #right-tog, .bkgd-desc');
@@ -89,20 +134,18 @@ $("body").on('click', '.links, .links-thru', function(event) {
 
 /*LEFT ANIMATIONS*/
 $("body").on('click', '.work', function(event) {
-    $('.left').animate({left: 0}),
-    $content.animate({left: 100},200,function(){
-        $(this).animate({left: 0});
-    });
+    $('.left').fadeIn();
     $navsOne.fadeOut(300);
+	$('.slides-container li img').removeClass('notblurry').addClass('blurry');
 });
 
 $("body").on('click', '#content, .work-link, a[role=close]', function(event) {
     var divPosition = parseInt($('.left').css('left'));
 
     if (divPosition == 0) {
-        $('.left').animate({left: -1000}),
-        $content.animate({left: 0}),
+        $('.left').fadeOut();
         $navsOne.fadeIn(300);
+		$('.slides-container li img').removeClass('blurry').addClass('notblurry');
     };
 });
     
@@ -149,26 +192,43 @@ $("body").on('click', '#about-thru', function(event) {
     $navsOne.fadeIn(300);
 });
     
-/*CATEGORY FILTER*/
-$('#filter li a').click(function() {
-    $('#filter li .current').removeClass('current');
-    $(this).parent().addClass('current');
 
-    var filterVal = $(this).text().replace(/ /g,'-');
+	
+	
+// Find all YouTube videos
+var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='http://www.youtube.com']"),
 
-    if(filterVal == 'All') {
-        $('.work-grid li.hidden').fadeIn('slow').removeClass('hidden');
-    } else {
-        $('.work-grid li').each(function() {
-            if(!$(this).hasClass(filterVal)) {
-                $(this).fadeOut(600).addClass('hidden');
-            } else {
-                $(this).fadeIn(600).removeClass('hidden');
-            }
-        });
-    }
+    // The element that is fluid width
+    $fluidEl = $("body");
 
-    return false;
+// Figure out and save aspect ratio for each video
+$allVideos.each(function() {
+
+  $(this)
+    .data('aspectRatio', this.height / this.width)
+
+    // and remove the hard coded width/height
+    .removeAttr('height')
+    .removeAttr('width');
+
 });
+
+// When the window is resized
+$(window).resize(function() {
+
+  var newWidth = $fluidEl.width();
+
+  // Resize all videos according to their own aspect ratio
+  $allVideos.each(function() {
+
+    var $el = $(this);
+    $el
+      .width(newWidth)
+      .height(newWidth * $el.data('aspectRatio'));
+
+  });
+
+// Kick off one resize to fix all videos on page load
+}).resize();
 
 });

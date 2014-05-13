@@ -4,51 +4,8 @@
 
 <section id="content" role="main">
 
-	<div id="slides">
-    <!-- Home page slider of portfolio work -->
-    <?php
-
-        $args = array(
-            'post_type' => 'work',
-            'category_name' => 'featured'
-        );
-
-        $slideshow_query = new WP_Query( $args );
-
-    ?>
-
-    <?php if ( have_posts() ) : ?>
-
-		<ul class="slides-container">
-
-			<?php while ( $slideshow_query->have_posts() ) : $slideshow_query->the_post(); ?>
-
-			<?php if( have_rows('images') ) :
-
-				$rows = get_field('images'); // get all the rows
-				$first_row = $rows[0]; // get the first row
-				$first_row_image = $first_row['image' ]; // get the sub field value
-				$image = wp_get_attachment_image_src( $first_row_image, 'full' );
-
-			?>
-
-			<li>
-				<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
-			</li>
-
-			<?php endif; ?>
-
-			<?php endwhile; ?>
-
-		</ul><!-- .slides-container -->
-		<nav class="slides-navigation">
-			<a href="#" class="next"></a>
-			<a href="#" class="prev"></a>
-		</nav>
-
-        <?php endif; ?>
-
-	</div><!-- #slides -->
+<iframe src="//player.vimeo.com/video/34864837#t=0m26s?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="1920" height="1202" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="splash"></div>
 
 </section><!-- #content -->
 

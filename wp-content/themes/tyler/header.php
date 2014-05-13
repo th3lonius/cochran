@@ -22,16 +22,18 @@
 
 <body <?php body_class(); ?>>
 
+	<div class="blurry"></div>
+	
 	<header>
         <nav>
-            <ul id="menu">
+            <ul class="main-menu">
                 <li class="home"><a href="<?php echo site_url(); ?>">Home</a></li>
-                <li class="about-link"><a href="">About</a></li>
+                <li class="about-link"><a href="<?php echo site_url(); ?>/about">About</a></li>
                 <li class="work"><a href="">Work</a></li>
                 <li class="exhibitions-link"><a href="">Exhibitions</a></li>
                 <li class="links"><a href="">Events</a></li>
             </ul>
-            <ul id="social">
+            <ul class="social-links">
                 <li class="linkedin"><a href="">linkedIn</a></li>
                 <li class="twitter"><a href="">Twitter</a></li>
                 <li class="facebook"><a href="">Facebook</a></li>

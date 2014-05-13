@@ -1,7 +1,7 @@
 <?php /* Template Name: Work List Section */ ?>
 
 <?php
-
+ 
     $args = array(
         'post_type' => 'work'
     );
@@ -10,14 +10,25 @@
 
 ?>
 
+
+
 <section class="left">
 
 <?php if ( $work_query->have_posts() ) : ?>
     
-    <ul id="filter">
-        <?php wp_list_categories('hierarchical=0&title_li=&show_option_all=All&hide_empty=0&exclude=1'); ?>
-        <a role="close"></a>
-    </ul>
+    <nav>
+		<ul class="filters">
+			<?php $categories = get_categories(); ?>
+			<li><span class="filter active" data-filter="all">All</span></li>
+			
+			<?php
+			foreach($categories as $category)
+			echo '<li><span class="filter" data-filter="'.$category->category_nicename.'">'.$category->cat_name.'</span></li>';
+			?>
+			
+			<a role="close"></a>
+		</ul>
+    </nav>
 
     <ul class="work-grid">
 
@@ -33,15 +44,18 @@
             $image = wp_get_attachment_image_src( $first_row_image, $size );
 
         ?>
+        
+        <li class="item <?php
+        foreach((get_the_category()) as $category) {
+        echo $category->category_nicename . ' '; } ?>">
+        	<figure>
+        		<img src="<?php echo $image[0]; ?>" alt="" />
+        		<figcaption class="label">
+        			<a class="work-link" href="<?php the_permalink(); ?>"><h3><?php the_title() ;?></h3></a>
+        		</figcaption>
+			</figure>
 
-        <li class="<?php
- foreach((get_the_category()) as $category) {
- echo $category->cat_name . ' ';
- }
- ?>">
-			<img src="<?php echo $image[0]; ?>"/>
-            <a class="work-link" href="<?php the_permalink(); ?>"><div><h3><?php the_title() ;?></h3></div></a>
-        </li>
+        </li><!-- /.portfolio -->
 
 		<?php endif; ?>
 
