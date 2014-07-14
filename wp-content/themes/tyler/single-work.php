@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'exhibition', 'list' ); ?>
+<section id="exhibitions"></section>
 
     <section id="content" role="main">
 
@@ -24,7 +24,7 @@ get_header(); ?>
                 <li>
                     <?php $image = wp_get_attachment_image_src(get_sub_field('image'), 'full'); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('title');?>" rel="<?php echo $thumb[0]; ?>" />
-                    <figcaption class="bkgd-desc">
+                    <figcaption>
                         <h3 class="bkgd-title"><?php the_title() ;?></h3>
                         <date><?php the_field( 'year' ); ?></date>
 						<h4 class="image-title"><?php echo the_sub_field('title');?></h4>

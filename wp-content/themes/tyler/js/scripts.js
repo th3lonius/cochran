@@ -1,5 +1,19 @@
 jQuery(document).ready(function($){
+	
+	$('.work-link, .exhibitions-link').children('a').removeAttr("href");
+	
+	document.addEventListener('touchstart',this.touchstart);
+	document.addEventListener('touchmove',this.touchmove);
+	
+	function touchstart(e) {
+		e.preventDefault()
+	}
+	
+	function touchmove(e) {
+		e.preventDefault()
+	}
 
+/*SUPERSLIDES*/
 $('#slides').superslides({
     play: 8000,
 	animation: 'fade',
@@ -7,52 +21,7 @@ $('#slides').superslides({
     pagination: false
 });
 	
-
-	$(function () {
-		
-		var filterList = {
-		
-			init: function () {
-			
-				// MixItUp plugin
-				// http://mixitup.io
-				$('.work-grid').mixitup({
-					targetSelector: '.item',
-					filterSelector: '.filter',
-					effects: ['fade'],
-					easing: 'snap',
-					// call the hover effect
-					onMixEnd: filterList.hoverEffect()
-				});				
-			
-			},
-			
-			hoverEffect: function () {
-			
-				// Simple parallax effect
-				$('.work-grid .item').hover(
-					function () {
-						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-						$(this).find('img').stop().animate({top: -20}, 500, 'easeOutQuad');				
-					},
-					function () {
-						$(this).find('.label').stop().animate({bottom: -50}, 200, 'easeInQuad');
-						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-					}		
-				);				
-			
-			}
-
-		};
-		
-		// Run the show!
-		filterList.init();
-		
-		
-	});	
-
-		
-    
+/*SLIDER NAV*/
 $("body").mousemove(function(event){       
     var mouseX = event.pageX / $(window).width();
 
@@ -77,36 +46,84 @@ $("body").mousemove(function(event){
     };
     event.stopPropagation();
 });
+	
+/*MIXITUP*/
+$(function () {
 
-$(".links a, .work a, .exhibitions-link a").removeAttr("href").addClass('tooltips');
-    
+	var filterList = {
+
+		init: function () {
+
+			// MixItUp plugin
+			// http://mixitup.io
+			$('.work-grid').mixitup({
+				targetSelector: '.item',
+				filterSelector: '.filter',
+				effects: ['fade'],
+				easing: 'snap',
+				// call the hover effect
+				onMixEnd: filterList.hoverEffect()
+			});				
+
+		},
+
+		hoverEffect: function () {
+
+			// Simple parallax effect
+			$('.work-grid .item').hover(
+				function () {
+					$(this).find('img').stop().animate({top: -12}, 500, 'easeOutQuad');				
+				},
+				function () {
+					$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+				}		
+			);				
+
+		}
+
+	};
+
+	// Run the show!
+	filterList.init();
+
+});	
+	
+/*GLOBALS*/
 var $rightDiv = $('.right');
-var $navsOne = $('header nav, #right-tog, .bkgd-desc');
-var $navsTwo = $('header nav, header div, .right-tog, .bkgd-desc');
+var $navsOne = $('header nav, .right-tog, .bkgd-desc');
+var $mainNav = $('header nav');
+var $rightToggle = $('.right-tog');
+var $caption = $('figcaption');
 var $content = $('#content'); 
     
 /*RIGHT ANIMATIONS*/
-$("body").on('click', '.right-tog', function(event) {
-    $rightDiv.animate({right: 0}, 300);
-    $content.animate({right: 100},200,function(){
-        $(this).animate({right: 0});
-    });
-    $navsTwo.fadeOut(300);
-});
-
-$("body").on('click', '#content, .click-thru, a[role=close]', function(event) {
-    var divpos = parseInt($('.right').css('right'));
-
-    if (divpos == 0) {
-        $rightDiv.animate({right: '-100%'}),
-        $navsTwo.fadeIn(300);
-    };
+$("body").on('click', '.right-tog, .right .exit', function(event) {
+	var divpos = parseInt(($rightDiv).css('right'));
+	if (divpos == 0) {
+		$rightDiv.animate({right: '-100%'});
+        $mainNav.fadeIn(800,'easeOutQuad');
+		$rightToggle.fadeIn('easeOutQuad');
+		$caption.fadeIn('easeOutQuad');
+	} else {
+		$rightDiv.animate({right: 0});
+		$content.animate({right: 100},200,function(){
+			$(this).animate({right: 0});
+		});
+        $mainNav.fadeOut(800,'easeOutQuad');
+		$rightToggle.fadeOut('easeOutQuad');
+		$caption.fadeOut('easeOutQuad');
+	};
 });
 
 /*LINKS ANIMATIONS*/
 $("body").on('click', '.exhibitions-link', function(event) {
-    $('#exhibitions').animate({top: 0}),
-    $content.animate({top: 100}),
+	var toLoad = 'http://cochranmurray.com/wp-content/themes/tyler/exhibition-list.php #exhibition-list';
+	$('#exhibitions').append('<div class="spinner"></div>');
+	$('#exhibitions').fadeIn().load(toLoad,'',function(){
+		$('.spinner').fadeOut();
+	});
+	$('#exhibitions').animate({top: 0});
+    $content.animate({top: 100});
     $navsOne.fadeOut(300);
 
     var rightpos = parseInt($('.right').css('right'));
@@ -133,35 +150,19 @@ $("body").on('click', '.links, .links-thru', function(event) {
 });
 
 /*LEFT ANIMATIONS*/
-$("body").on('click', '.work', function(event) {
-    $('.left').fadeIn();
+$("body").on('click', '.work-link', function(event) {
+    $('.left').animate({left: 0}, 1).fadeIn();
     $navsOne.fadeOut(300);
-	$('.slides-container li img').removeClass('notblurry').addClass('blurry');
+	$('.slides-container li img, #content iframe, .splash').removeClass('notblurry').addClass('blurry');
 });
 
-$("body").on('click', '#content, .work-link, a[role=close]', function(event) {
-    var divPosition = parseInt($('.left').css('left'));
-
-    if (divPosition == 0) {
+$("body").on('click', '#content, .left .exit', function(event) {
+    var divPosition = $('.left').css('display');
+    if (divPosition == 'block') {
         $('.left').fadeOut();
         $navsOne.fadeIn(300);
-		$('.slides-container li img').removeClass('blurry').addClass('notblurry');
+		$('.slides-container li img, #content iframe, .splash').removeClass('blurry').addClass('notblurry');
     };
-});
-    
-$("body").on('click', 'header navi', function(event) {
-    var target = $( event.target );
-    var divWidth = parseInt($(this).css('width'));
-    
-    if (divWidth < 130 & target.is('header nav') ) {
-        $(this).animate({width: 130}, 100),
-        $('header h1').animate({left: 160}, 150, function(){
-            $(this).delay(60).animate({left: 140}, 100);
-        });
-    } else {
-        $(this).animate({width: 60}, 100),
-        $('header h1').animate({left: 70}, 100);
-    }
 });
 
 /*LINKS ANIMATIONS*/
@@ -176,7 +177,6 @@ $("body").on('click', '#content', function(event) {
         $navsOne.fadeIn(300);
     };
 });
-
 
 /*CLICK THRU FUNCTIONS*/
 $("body").on('click', '#work-thru', function(event) {
@@ -193,8 +193,6 @@ $("body").on('click', '#about-thru', function(event) {
 });
     
 
-	
-	
 // Find all YouTube videos
 var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='http://www.youtube.com']"),
 

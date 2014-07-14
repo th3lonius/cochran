@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'exhibition', 'list' ); ?>
+<section id="exhibitions"></section>
 
 <?php
 
@@ -15,8 +15,6 @@ get_header(); ?>
     $the_query = new WP_Query( $args );
 
 ?>
-
-<span style="font-size: 26px; color: red; float: right;">I am work</span>
 
     <section id="content" role="main">
 
@@ -29,5 +27,7 @@ get_header(); ?>
 			<?php endwhile; endif; ?>
 
 	</section><!-- #content -->
+
+<?php get_template_part( 'left', 'none' ); ?>
 
 <?php get_footer(); ?>

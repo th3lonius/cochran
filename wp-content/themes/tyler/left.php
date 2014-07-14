@@ -10,11 +10,11 @@
 
 ?>
 
-
-
 <section class="left">
 
 <?php if ( $work_query->have_posts() ) : ?>
+    
+    <a class="exit"></a>
     
     <nav>
 		<ul class="filters">
@@ -25,8 +25,6 @@
 			foreach($categories as $category)
 			echo '<li><span class="filter" data-filter="'.$category->category_nicename.'">'.$category->cat_name.'</span></li>';
 			?>
-			
-			<a role="close"></a>
 		</ul>
     </nav>
 
@@ -47,14 +45,15 @@
         
         <li class="item <?php
         foreach((get_the_category()) as $category) {
-        echo $category->category_nicename . ' '; } ?>">
+        echo $category->category_nicename . ' '; } ?>" data-cat="<?php echo $category->category_nicename . ' '; ?>">
         	<figure>
-        		<img src="<?php echo $image[0]; ?>" alt="" />
-        		<figcaption class="label">
-        			<a class="work-link" href="<?php the_permalink(); ?>"><h3><?php the_title() ;?></h3></a>
-        		</figcaption>
+        		<a href="<?php the_permalink(); ?>">
+					<img src="<?php echo $image[0]; ?>" alt="" />
+					<figcaption class="label">
+						<h3><?php the_title() ;?></h3>
+					</figcaption>
+				</a>
 			</figure>
-
         </li><!-- /.portfolio -->
 
 		<?php endif; ?>

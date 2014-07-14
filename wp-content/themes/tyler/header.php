@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -29,14 +29,25 @@
             <ul class="main-menu">
                 <li class="home"><a href="<?php echo site_url(); ?>">Home</a></li>
                 <li class="about-link"><a href="<?php echo site_url(); ?>/about">About</a></li>
-                <li class="work"><a href="">Work</a></li>
+                <li class="work-link"><a href="">Work</a></li>
                 <li class="exhibitions-link"><a href="">Exhibitions</a></li>
-                <li class="links"><a href="">Events</a></li>
             </ul>
+           
+<?php
+ 
+    $args = array(
+        'post_type' => 'social'
+    );
+
+    $social_query = new WP_Query( $args );
+
+?>
             <ul class="social-links">
-                <li class="linkedin"><a href="">linkedIn</a></li>
-                <li class="twitter"><a href="">Twitter</a></li>
-                <li class="facebook"><a href="">Facebook</a></li>
+                <?php while ( $social_query->have_posts() ) : $social_query->the_post(); ?>
+                <li class="linkedin"><a href="<?php the_field( 'linkedin' ); ?>">LinkedIn</a></li>
+                <li class="twitter"><a href="<?php the_field( 'twitter' ); ?>">Twitter</a></li>
+                <li class="facebook"><a href="<?php the_field( 'facebook' ); ?>">Facebook</a></li>
+                <?php endwhile; ?>
             </ul>
 		</nav><!-- #site-navigation -->
 		<div role="banner"></div>

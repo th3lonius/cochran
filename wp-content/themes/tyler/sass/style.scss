@@ -107,11 +107,11 @@ input, select {
 }
 body, html {
     height: 100%;
+	overflow: hidden;
+	width: 100%;
 	-webkit-font-smoothing: antialiased!important;
 }
-body, #content {
-    overflow: hidden;
-}
+
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -163,7 +163,6 @@ $break-large: 1024px;
 }
 
 /*GLOBAL*/
-
 $green: #92B540;
 $blue: #009BA6;
 $red: #CD4D58;
@@ -249,7 +248,7 @@ $hand-font: "gooddog-new", sans-serif;
 @mixin h4 {
     font-family: $title-font;
     font-size: 1em;
-    font-weight: 100;
+    font-weight: 300;
 	letter-spacing: 2px;
     line-height: 20px;
     color: $white;
@@ -266,7 +265,7 @@ $hand-font: "gooddog-new", sans-serif;
 @mixin p-alt {
     font-family: $title-font;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 16px;
     color: $black;
 }
@@ -312,6 +311,9 @@ h3 {
 h4 {
 	@include h4;
 }
+h5 {
+	@include h4;
+}
 p {
     @include p;
 }
@@ -324,7 +326,7 @@ p {
 section {
     @include block-rel;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 figure {
     @include block-rel;
@@ -406,20 +408,21 @@ header {
                 text-indent: 70px;
                 @include respond-to(mobile) {
                     @include inline-rel;
+					float: left;
                     background-position: center;
-                    width: 24.3%;
+                    width: 25%;
                 }
                 &:hover a {
                     opacity: 1;
                 }
                 a {
                     @include trans-two;
+					display: block;
                     font-family: $hand-font;
                     font-size: 1.25em;
                     font-weight: 400;
                     height: 100%;
                     opacity: 0;
-                    -webkit-transform: rotate(5deg);
                     @include respond-to(mobile) {
                         text-indent: -9999px;
                     }
@@ -439,7 +442,7 @@ header {
                     background-color: #009BA6;
                 }
             }
-            .work {
+            .work-link {
                 background-image: url('images/icons/work.svg');
                 background-size: 40px;
                 &:hover {
@@ -450,6 +453,9 @@ header {
                 background-image: url('images/icons/exhibitions.svg');
                 background-position: 12px center;
                 background-size: 36px;
+				@include respond-to(mobile) {
+					background-position: center;
+				}
                 &:hover {
                     background-color: #CD4D58;
                 }
@@ -496,12 +502,17 @@ header {
 
 /*MAIN PAGE*/
 .splash {
-	background: url(images/splash.svg) no-repeat center;
+	background-color: rgba(0,0,0,0.2);
+	background-image: url(images/splash.svg);
+	background-position: center 30%;
+	background-repeat: no-repeat;
+	background-size: 60%;
 	position: absolute;
-	top: 10%; left: 50%;
-	width: 60%; height: 70%;
+	width: 100%; height: 100%;
 	z-index: 99;
-	-webkit-transform: translate(-50%);
+	@include respond-to(mobile) {
+		background-size: 100%;
+	}
 }
 
 .blurry {
@@ -510,7 +521,7 @@ header {
 	-webkit-transition: -webkit-filter 1s ease, opacity 1.2s ease-out;
 	-moz-transition: all 1s ease;
 	-o-transition: -o-filter 1s ease, opacity 1.2s ease-out;
-	opacity: 0.7;
+	opacity: 1;
 }
 
 .notblurry {
@@ -532,69 +543,71 @@ header {
     height: auto;
     min-height: 100%;
 }
-.bkgd-desc {
-    @include block-ab;
-    @include trans-two;
-    top: 60px; right: 0;
-    background: $blackbg;
-    min-width: 250px;
-    padding: 10px 16px;
-    z-index: 100;
-    @include respond-to(mobile) {
-        bottom: 200px;
-        top: auto;
-        width: 100%;
-    }
-    .right-tog {
-        @include block-ab;
-        @include trans-one;
-        bottom: -60px; right: 0;
-        width: 40px; height: 40px;
-        cursor: pointer;
-        &:hover .right-tog-plus {
-            right: 60px;
-        }
-        &:hover p {
-            right: 0px;
-        }
 
-        .right-tog-plus {
-            @include block-ab;
-            @include trans-one;
-            top: 0px; right: 0;
-            width: 40px; height: 40px;
-            background: $blackbg;
-            &:hover {
-                right: 60px;
-            }
-            &::before {
-                content:'';
-                @include block-ab;
-                top: 7px; right: 18px;
-                width: 4px; height: 26px;
-                background: $white;
-            }
-            &::after {
-                content:'';
-                @include block-ab;
-                top: 18px; right: 7px;
-                width: 26px; height: 4px;
-                background: $white;
-            }
-        }
-        p {
-            @include block-ab;
-            @include trans-one;
-            top: 0px; right: -100px;
-            width: 100px; height: 40px;
-            padding: 12px 0 0 12px;
-            background: #CD4D58;
-            color: white;
-            font-family: $display-font;
-            font-size: 1em!important;
-        }
-    }
+#content {
+	figcaption {
+		@include block-ab;
+		top: 60px; right: 0;
+		background: $blackbg;
+		min-width: 250px;
+		padding: 10px 16px;
+		z-index: 100;
+		@include respond-to(mobile) {
+			bottom: 60px; top: auto;
+			width: 100%;
+		}
+		.right-tog {
+			@include block-ab;
+			@include trans-one;
+			bottom: -30px; right: 0;
+			cursor: pointer;
+			@include respond-to(mobile) { top: -80px; bottom: auto; }
+			&:hover .right-tog-plus {
+				right: 60px;
+			}
+			&:hover p {
+				right: 0px;
+			}
+			.right-tog-plus {
+				@include block-ab;
+				@include trans-one;
+				top: 0px; right: 0;
+				width: 50px; height: 50px;
+				background: $blackbg;
+				&:hover {
+					right: 60px;
+				}
+				&::before {
+					content:'';
+					@include block-ab;
+					top: 12px; right: 23px;
+					width: 4px; height: 26px;
+					background: $white;
+				}
+				&::after {
+					content:'';
+					@include block-ab;
+					top: 23px; right: 12px;
+					width: 26px; height: 4px;
+					background: $white;
+				}
+			}
+			p {
+				@include block-ab;
+				@include trans-one;
+				line-height: 50px;
+				top: 0px; right: -100px;
+				width: 100px; height: 50px;
+				padding: 0 12px;
+				background: #CD4D58;
+				color: white;
+				font-family: $display-font;
+				font-size: 1em!important;
+			}
+		}
+	}
 }
+
 date {
 	@include h4;
 	color: #cecece;
@@ -606,8 +619,7 @@ date {
 
 /*RIGHT*/
 .right {
-    @include block-ab;
-    /*@include trans-two;*/
+	position: fixed;
     top: 0; bottom: 0; right: -100%;
     width: 40%;
     background: rgba(26,26,26,0.8);
@@ -620,109 +632,56 @@ date {
     @include respond-to(mobile) {
         width: 100%;
     }
-    
-    a[role=close] {
-        position: absolute;
-        top: 20px; left: 20px;
-    }
-
     #content-cont {
         @include block-rel;
         width: 90%;
-        margin: 80px auto auto;
-
+        margin: 60px auto auto;
         h2 {
             color: #CD4D58;
         }
         h3 {
             font-size: 3em;
         }
+		h5 {
+			@include trans-one;
+			display: inline-block;
+			padding: 6px 12px;
+			&:hover {
+				background: hsl(27, 70%, 60%);
+			}
+		}
         p {
             color: $white;
             line-height: 1.7;
         }
-        .foot {
-            @include block-rel;
-            height: 160px;
-
-            .click-thru {
-                @include inline-rel;
-                @incldue trans-one;
-                @include h3;
-                font-size: 16px;
-                padding: 10px;
-                vertical-align: bottom;
-                margin: 100px 0 0 0;
-            }
-            #work-thru {
-                @incldue trans-one;
-                float: left;
-                color: #CD4D58;
-                &:hover {
-                    background: #CD4D58;
-                    color: white;
-                }
-            }
-            #about-thru {
-                @incldue trans-one;
-                float: right;
-                color: #009BA6;
-                &:hover {
-                    background: #009BA6;
-                    color: white;
-                }
-            }
-            .links-thru {
-                @incldue trans-one;
-                float: right;
-                color: #009BA6;
-                &:hover {
-                    background: #009BA6;
-                    color: white;
-                }
-            }
-            #prev-thru {
-                @incldue trans-one;
-                float: left;
-                color: #CD4D58;
-                &:hover {
-                    background: #CD4D58;
-                    color: white;
-                }
-            }
-            #next-thru {
-                @incldue trans-one;
-                float: right;
-                color: #009BA6;
-                &:hover {
-                    background: #009BA6;
-                    color: white;
-                }
-            }
-        }
-    }
+	}
 }
+
 /*END RIGHT*/
 
-        a[role=close] {
+        .exit {
             @include trans-one;
-            background-image: url(images/icons/arrow.svg);
+            background-image: url(images/icons/x.svg);
             background-repeat: no-repeat;
-            background-position: right center;
-            background-size: 100%;
+            background-position: center;
+            background-size: 50%;
             cursor: pointer;
-            float: right;
-            width: 30px; height: 30px;
+            position: absolute;
+			top: 0; right: 0;
+            width: 80px; height: 80px;
+			z-index: 100;
             &:hover {
-                -webkit-transform: translateX(-5px);
-                -moz-transform: translateX(-5px);
-                transform: translateX(-5px);
+                background-color: hsl(27, 70%, 60%);
+				background-image: url(images/icons/x.svg);
+				background-repeat: no-repeat;
+				background-position: center;
             }
-        }
+		}
 
 /*LEFT SECTION*/
 .left {
     @include block-ab;
+	background: rgba(10,10,10,0.6);
 	display: none;
     top: 0; bottom: 0; left: 0; right: 0;
 	text-align: center;
@@ -731,99 +690,140 @@ date {
         max-width: 100%;
         width: 100%;
     }
+	.exit {
+		left: 0;
+		@include respond-to(mobile) {
+			width: 60px; height: 60px;
+		}
+	}
 	nav {
 		@include trans-one;
-		background-color: rgba(26,26,26,0.7);
-		height: 36px;
-		overflow: hidden;
-		position: absolute; top: 0;
-		width: 100px;
-		z-index: 99;
-		&:hover {
-			width: 100%;
-		}
+		background: rgba(26,26,26,0.6);
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 80px;
+		@include respond-to(mobile) { height: 60px; }
 		.filters {
-			width: 100%;
+			padding-left: 80px;
+			position: relative;
+			width: 100%; height: 100%;
+			@include respond-to(mobile) {
+				display: table;
+				table-layout: fixed;
+				padding-left: 60px;
+			}
 			li {
-				@include trans-two;
+				cursor: pointer;
 				display: inline-block;
-				&.current {
-					background: hsl(57, 60%, 51%);
-				}
-				&.current span {
-					color: #FFF;
+				float: left;
+				position: relative;
+				@include respond-to(mobile) {
+					display: table-cell;
+					float: none;
+					text-align: center;
+					width: auto;
 				}
 				span {
 					color: $white;
 					display: block;
 					font-family: $title-font;
 					font-size: 1.5em;
-					letter-spacing: 1px;
-					line-height: 36px;
-					padding: 0 18px;
+					letter-spacing: 3px;
+					line-height: 80px;
+					padding: 0 24px;
+					position: relative;
 					text-transform: uppercase;
-					&:hover {
-						background: hsl(57, 60%, 51%);
-						color: #FFF;
+					z-index: 99;
+					@include respond-to(mobile) {
+						font-size: 1em;
+						line-height: 60px;
+						padding: 0;
+					}
+					&::before {
+						@include trans-one;
+						background: hsl(27, 70%, 60%);
+						top: 0; left: 0;
+						content: "";
+						height: 0;
+						position: absolute;
+						width: 100%;
+						z-index: -1;
+					}
+					&:hover::before, &.active::before {
+						height: 100%;
 					}
 				}
 			}
 			a[role=close] {
-				float: right;
-				margin: 4px;
+				position: absolute;
+				top: -50px;
+				@include respond-to(mobile) { top: 10px; left: 10px; }
 			}
 		}
 	}
 	.work-grid {
-		margin: 0 auto;
-		width: 50%;
+		display: block;
+		margin: 80px auto;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		padding: 0;
+		width: 100%; height: 100%;
+		@extend %clearfix;
+		@include respond-to(mobile) { margin: 60px auto; }
 		.item {
 			display: none;
-			margin: 1%;
+			float: left;
+			margin-bottom: -2px;
+			padding: 0 1px 0 0;
 			opacity: 0;
 			overflow: hidden;
-			width: 25%;
+			width: 20%;
+			@include respond-to(mobile) {
+				max-width: 50%;
+				width: 50%;
+			}
+			@include respond-to(medium-screen) { width: 25%; }
+			&:hover img {
+				@include fullcolor;
+			}
+			&:hover .label {
+				bottom: 0;
+			}
 			img {
+				@include grayscale;
+				max-width: 100%;
 				position: relative;
 			}
 			.label {
-				background: #e95a44;
+				@include trans-two;
+				background: hsl(224, 19%, 12%);
 				position: absolute;
 				width: 100%;
-				height: 50px;
-				bottom: -50px;
-				a {
-					display: block;
+				height: 60px;
+				bottom: -60px;
+				@include respond-to(mobile) {
+					bottom: 0;
+					height: 50px;
+				}
+				h3 {
+					font-size: 2em;
 					height: 100%;
-					padding: 6px 12px;
+					line-height: 60px;
+					padding: 0 16px;
 					position: absolute;
 					text-align: left;
 					top: 0;	left: 0;
+					@include respond-to(medium-screen) {
+						font-size: 1.5em;
+					}
+					@include respond-to(mobile) {
+						font-size: 1.25em;
+						line-height: 50px;
+					}
 				}
 			}
 		}
 	}
 }
-
-
-
-
-		.item .label-bg {
-			
-
-		}
-	
-		.item .label-text {
-			color:#fff;
-			position: relative;
-			z-index:500;
-			padding:5px 8px;
-		}
-			
-			.item .text-category {
-				display:block;
-				font-size:9px;
-			}
 
 
 /*EXHIBITIONS*/
@@ -844,14 +844,13 @@ date {
     @include box-shadow(2px, 0, 8px, 2px, rgba(0,0,0,0.3));
     /*@include trans-two;*/
     left: 0; right: 0; top: -60%;
-    height: 33.3333%;
+    height: auto;
     background: $white;
-    overflow-y: scroll;
     padding: 20px;
     z-index: 99999;
 }
 
-.exhibition-list {
+#exhibition-list {
     margin: 0 auto;
     max-width: 80%;
     h2 {
@@ -881,7 +880,7 @@ date {
                 height: 100%;
                 left: -14px;
                 position: absolute;
-                top: -4px;
+                top: 0;
                 width: 4px;
                 z-index: -1;
             }
@@ -891,97 +890,52 @@ date {
             h3 {
                 @include trans-one;
                 color: $black;
-                font-family: "prenton-condensed";
                 font-size: 2em;
                 text-transform: none;
             }
             h4 {
                 @include trans-one;
                 color: $black;
+				font-size: 1.2em;
             }
         }
     }
 }
 
-/*FOOTER*/
-footer {
-    @include block-ab;
-    /*@include trans-two;*/
-    left: 0; right: 0; bottom: -60%;
-    height: 300px;
-    background: $white;
-    z-index: 99999;
+
+.spinner {
+height:60px;
+width:60px;
+margin:0px auto;
+position:relative;
+-webkit-animation: rotation .6s infinite linear;
+-moz-animation: rotation .6s infinite linear;
+-o-animation: rotation .6s infinite linear;
+animation: rotation .6s infinite linear;
+border-left:6px solid rgba(0,174,239,.15);
+border-right:6px solid rgba(0,174,239,.15);
+border-bottom:6px solid rgba(0,174,239,.15);
+border-top:6px solid rgba(0,174,239,.8);
+border-radius:100%;
 }
 
-#exlinks-title {
-    @include block-rel;
-    width: 100%;
-    margin: 30px auto 20px;
-    padding-left: 100px;
+@-webkit-keyframes rotation {
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(359deg);}
 }
 
-#exlinks-cont {
-    @include block-rel;
-    width: 100%;
-    text-align: justify;
-    margin: 20px auto 0;
-    padding: 0 100px 0 100px;
-    &::after {
-        content:'';
-        @include inline-rel;
-        width: 100%;
-    }
-
-    .exlink {
-        @include inline-rel;
-        @include trans-one;
-        @include h3;
-        width: 20%;
-        font-size: 16px;
-        padding: 10px;
-        text-align: center;
-    }
-
-    #one  {
-        background-color: white;
-        border: 2px solid #92B540;
-        &:hover {
-            background-color: #92B540;
-            color: white;
-        }
-    }
-    #two  {
-        background-color: white;
-        border: 2px solid #009BA6;
-        &:hover {
-            background-color: #009BA6;
-            color: white;
-        }
-    }
-    #three  {
-        background-color: white;
-        border: 2px solid #CD4D58;
-        &:hover {
-            background-color: #CD4D58;
-            color: white;
-        }
-    }
-    #four  {
-        background-color: white;
-        border: 2px solid #CDC638;
-        &:hover {
-            background-color: #CDC638;
-            color: white;
-        }
-    }
+@-moz-keyframes rotation {
+from {-moz-transform: rotate(0deg);}
+to {-moz-transform: rotate(359deg);}
 }
 
-#colophon{
-    @include block-rel;
-    font-size: 1em;
-    color: #646464;
-    width: 100%;
-    margin: 20px auto;
-    padding-left: 100px;
+@-o-keyframes rotation {
+from {-o-transform: rotate(0deg);}
+to {-o-transform: rotate(359deg);}
+}
+
+@keyframes rotation {
+from {transform: rotate(0deg);}
+to {transform: rotate(359deg);}
 }
 /*END FOOTER*/
